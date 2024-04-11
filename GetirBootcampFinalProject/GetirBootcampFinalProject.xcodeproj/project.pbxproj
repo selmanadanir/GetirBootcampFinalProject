@@ -17,6 +17,8 @@
 		B347FED32BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */; };
 		B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */; };
 		B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CFB2BC7D16100A555A4 /* AppSize.swift */; };
+		B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */; };
+		B3B48D012BC7E1C600A555A4 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48D002BC7E1C600A555A4 /* NetworkHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetirBootcampFinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		B3B48CFB2BC7D16100A555A4 /* AppSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
+		B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B3B48D002BC7E1C600A555A4 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				B3B48CED2BC7AA2400A555A4 /* App */,
+				B3B48CFD2BC7E18900A555A4 /* Network */,
 				B3B48CF22BC7BBD700A555A4 /* Common */,
 				B3B48CEE2BC7AA5A00A555A4 /* Module */,
 				B347FEBA2BC6EFF700CCDF3A /* LaunchScreen.storyboard */,
@@ -192,6 +197,15 @@
 				B3B48CFB2BC7D16100A555A4 /* AppSize.swift */,
 			);
 			path = AppSize;
+			sourceTree = "<group>";
+		};
+		B3B48CFD2BC7E18900A555A4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */,
+				B3B48D002BC7E1C600A555A4 /* NetworkHelper.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B48D012BC7E1C600A555A4 /* NetworkHelper.swift in Sources */,
+				B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */,
 				B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */,
 				B347FEB42BC6EFF600CCDF3A /* ProductListingViewController.swift in Sources */,
 				B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */,

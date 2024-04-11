@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Project color's rawvalue in assets
 struct AppColor {
     enum Name: String {
         case body = "bodyColorSet"
