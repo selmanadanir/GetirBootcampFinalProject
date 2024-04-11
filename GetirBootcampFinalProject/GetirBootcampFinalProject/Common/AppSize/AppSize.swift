@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Project font size's values
 struct AppSize {
     enum Size: Int {
         case primary =  14
