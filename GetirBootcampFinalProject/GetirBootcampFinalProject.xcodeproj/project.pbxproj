@@ -16,6 +16,7 @@
 		B347FED12BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FED02BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests.swift */; };
 		B347FED32BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */; };
 		B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */; };
+		B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CFB2BC7D16100A555A4 /* AppSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B347FED02BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetirBootcampFinalProjectUITests.swift; sourceTree = "<group>"; };
 		B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetirBootcampFinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		B3B48CFB2BC7D16100A555A4 /* AppSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				B3B48CF32BC7BBE000A555A4 /* AppColor */,
+				B3B48CFA2BC7D15300A555A4 /* AppSize */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -181,6 +184,14 @@
 				B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */,
 			);
 			path = AppColor;
+			sourceTree = "<group>";
+		};
+		B3B48CFA2BC7D15300A555A4 /* AppSize */ = {
+			isa = PBXGroup;
+			children = (
+				B3B48CFB2BC7D16100A555A4 /* AppSize.swift */,
+			);
+			path = AppSize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 				B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */,
 				B347FEB42BC6EFF600CCDF3A /* ProductListingViewController.swift in Sources */,
 				B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */,
+				B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */,
 				B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
