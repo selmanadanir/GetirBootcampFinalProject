@@ -8,18 +8,38 @@
 import Foundation
 
 // MARK: - ProductElement
-struct ProductElement: Codable {
-    let id, name: String
-    let productCount: Int
-    let products: [ProductClass]
+struct ProductModel: Codable {
+    let id: String
+    let name: String?
+    let productCount: Int?
+    let products: [ProductItem]?
+    let email, password: String?
 }
 
 // MARK: - ProductClass
-struct ProductClass: Codable {
+struct ProductItem: Codable {
     let id, name: String
     let attribute: String?
     let thumbnailURL, imageURL: String
     let price: Double
     let priceText: String
     let shortDescription: String?
+}
+
+// MARK: - SuggestedProduct
+struct SuggestedProductModel: Codable {
+    let products: [SuggestedProductItem]?
+    let id, name: String
+}
+
+// MARK: - Product
+struct SuggestedProductItem: Codable {
+    let id: String
+    let imageURL: String?
+    let price: Double
+    let name, priceText: String
+    let shortDescription, category: String?
+    let unitPrice: Double?
+    let squareThumbnailURL: String?
+    let status: Int?
 }

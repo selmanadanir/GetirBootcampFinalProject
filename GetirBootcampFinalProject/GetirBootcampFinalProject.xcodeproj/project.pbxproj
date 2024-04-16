@@ -15,11 +15,34 @@
 		B347FEC72BC6EFF700CCDF3A /* GetirBootcampFinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEC62BC6EFF700CCDF3A /* GetirBootcampFinalProjectTests.swift */; };
 		B347FED12BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FED02BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests.swift */; };
 		B347FED32BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */; };
+		B35BAE642BCAE268001713A0 /* ProductListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BAE632BCAE268001713A0 /* ProductListCollectionViewCell.swift */; };
+		B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F76E52BCC5B7B009052A2 /* LayoutManger.swift */; };
 		B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */; };
 		B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CFB2BC7D16100A555A4 /* AppSize.swift */; };
 		B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */; };
 		B3B48D012BC7E1C600A555A4 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48D002BC7E1C600A555A4 /* NetworkHelper.swift */; };
 		B3B48D032BC815F100A555A4 /* ProductsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48D022BC815F100A555A4 /* ProductsEntity.swift */; };
+		B3B48D052BC816F400A555A4 /* ProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48D042BC816F400A555A4 /* ProductsRouter.swift */; };
+		B3B48D072BC818BF00A555A4 /* ProductsListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48D062BC818BF00A555A4 /* ProductsListingInteractor.swift */; };
+		B3B48D092BC820D800A555A4 /* ProductsListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48D082BC820D800A555A4 /* ProductsListingPresenter.swift */; };
+		B3B48D0E2BC82BCF00A555A4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B3B48D0D2BC82BCF00A555A4 /* SnapKit */; };
+		B3B48D102BC82BD300A555A4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B3B48D0F2BC82BD300A555A4 /* Kingfisher */; };
+		B3C484CA2BCD7898001B4AD5 /* BasketDirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C484C92BCD7898001B4AD5 /* BasketDirectionEnum.swift */; };
+		B3F8E5D82BC9791800EFB96B /* CustomBasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F8E5D72BC9791800EFB96B /* CustomBasketView.swift */; };
+		B3F8E5DD2BC9C4B000EFB96B /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = B3F8E5DC2BC9C4B000EFB96B /* SkeletonView */; };
+		B3F8E5E02BC9C98700EFB96B /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F8E5DF2BC9C98700EFB96B /* Font+Extension.swift */; };
+		B3F8E6702BCA914E00EFB96B /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E6642BCA914E00EFB96B /* OpenSans-Medium.ttf */; };
+		B3F8E6712BCA914E00EFB96B /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E6652BCA914E00EFB96B /* OpenSans-SemiBold.ttf */; };
+		B3F8E6722BCA914E00EFB96B /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E6662BCA914E00EFB96B /* OpenSans-Light.ttf */; };
+		B3F8E6732BCA914E00EFB96B /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E6672BCA914E00EFB96B /* OpenSans-ExtraBoldItalic.ttf */; };
+		B3F8E6742BCA914E00EFB96B /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E6682BCA914E00EFB96B /* OpenSans-Italic.ttf */; };
+		B3F8E6752BCA914E00EFB96B /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E6692BCA914E00EFB96B /* OpenSans-ExtraBold.ttf */; };
+		B3F8E6762BCA914E00EFB96B /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66A2BCA914E00EFB96B /* OpenSans-LightItalic.ttf */; };
+		B3F8E6772BCA914E00EFB96B /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66B2BCA914E00EFB96B /* OpenSans-Bold.ttf */; };
+		B3F8E6782BCA914E00EFB96B /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66C2BCA914E00EFB96B /* OpenSans-BoldItalic.ttf */; };
+		B3F8E6792BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66D2BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf */; };
+		B3F8E67A2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66E2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf */; };
+		B3F8E67B2BCA914E00EFB96B /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66F2BCA914E00EFB96B /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +75,31 @@
 		B347FECC2BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetirBootcampFinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B347FED02BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetirBootcampFinalProjectUITests.swift; sourceTree = "<group>"; };
 		B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetirBootcampFinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B35BAE632BCAE268001713A0 /* ProductListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCollectionViewCell.swift; sourceTree = "<group>"; };
+		B35F76E52BCC5B7B009052A2 /* LayoutManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManger.swift; sourceTree = "<group>"; };
 		B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		B3B48CFB2BC7D16100A555A4 /* AppSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
 		B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B3B48D002BC7E1C600A555A4 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		B3B48D022BC815F100A555A4 /* ProductsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsEntity.swift; sourceTree = "<group>"; };
+		B3B48D042BC816F400A555A4 /* ProductsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRouter.swift; sourceTree = "<group>"; };
+		B3B48D062BC818BF00A555A4 /* ProductsListingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListingInteractor.swift; sourceTree = "<group>"; };
+		B3B48D082BC820D800A555A4 /* ProductsListingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListingPresenter.swift; sourceTree = "<group>"; };
+		B3C484C92BCD7898001B4AD5 /* BasketDirectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDirectionEnum.swift; sourceTree = "<group>"; };
+		B3F8E5D72BC9791800EFB96B /* CustomBasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBasketView.swift; sourceTree = "<group>"; };
+		B3F8E5DF2BC9C98700EFB96B /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		B3F8E6642BCA914E00EFB96B /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
+		B3F8E6652BCA914E00EFB96B /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		B3F8E6662BCA914E00EFB96B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		B3F8E6672BCA914E00EFB96B /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B3F8E6682BCA914E00EFB96B /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		B3F8E6692BCA914E00EFB96B /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B3F8E66A2BCA914E00EFB96B /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		B3F8E66B2BCA914E00EFB96B /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		B3F8E66C2BCA914E00EFB96B /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B3F8E66D2BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		B3F8E66E2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B3F8E66F2BCA914E00EFB96B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +107,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B48D102BC82BD300A555A4 /* Kingfisher in Frameworks */,
+				B3F8E5DD2BC9C4B000EFB96B /* SkeletonView in Frameworks */,
+				B3B48D0E2BC82BCF00A555A4 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +137,7 @@
 				B347FEC52BC6EFF700CCDF3A /* GetirBootcampFinalProjectTests */,
 				B347FECF2BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITests */,
 				B347FEAD2BC6EFF600CCDF3A /* Products */,
+				B3B48D0C2BC82BCF00A555A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,8 +155,12 @@
 			isa = PBXGroup;
 			children = (
 				B3B48CED2BC7AA2400A555A4 /* App */,
+				B3F8E6632BCA90E500EFB96B /* Fonts */,
+				B3F8E5DE2BC9C95800EFB96B /* Extensions */,
 				B3B48CFD2BC7E18900A555A4 /* Network */,
 				B3B48CF22BC7BBD700A555A4 /* Common */,
+				B3C484C72BCD7870001B4AD5 /* Utilities */,
+				B3F8E5D52BC9789600EFB96B /* CustomView */,
 				B3B48CEE2BC7AA5A00A555A4 /* Module */,
 				B347FEBA2BC6EFF700CCDF3A /* LaunchScreen.storyboard */,
 				B347FEBD2BC6EFF700CCDF3A /* Info.plist */,
@@ -134,6 +185,14 @@
 			path = GetirBootcampFinalProjectUITests;
 			sourceTree = "<group>";
 		};
+		B35F76E42BCC5B3D009052A2 /* CompositionalLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B35F76E52BCC5B7B009052A2 /* LayoutManger.swift */,
+			);
+			path = CompositionalLayout;
+			sourceTree = "<group>";
+		};
 		B3B48CED2BC7AA2400A555A4 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				B3B48CEF2BC7AA6100A555A4 /* ProductListingScreen */,
-				B3B48CF02BC7AAB200A555A4 /* DetailsScreen */,
-				B3B48CF12BC7AABE00A555A4 /* ShoppingCardScreen */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -158,23 +215,13 @@
 			isa = PBXGroup;
 			children = (
 				B347FEB32BC6EFF600CCDF3A /* ProductsListingViewController.swift */,
+				B3B48D082BC820D800A555A4 /* ProductsListingPresenter.swift */,
+				B3B48D062BC818BF00A555A4 /* ProductsListingInteractor.swift */,
+				B3B48D042BC816F400A555A4 /* ProductsRouter.swift */,
 				B3B48D022BC815F100A555A4 /* ProductsEntity.swift */,
+				B3C484CB2BCD7953001B4AD5 /* Cell */,
 			);
 			path = ProductListingScreen;
-			sourceTree = "<group>";
-		};
-		B3B48CF02BC7AAB200A555A4 /* DetailsScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DetailsScreen;
-			sourceTree = "<group>";
-		};
-		B3B48CF12BC7AABE00A555A4 /* ShoppingCardScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ShoppingCardScreen;
 			sourceTree = "<group>";
 		};
 		B3B48CF22BC7BBD700A555A4 /* Common */ = {
@@ -211,6 +258,81 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		B3B48D0C2BC82BCF00A555A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3C484C72BCD7870001B4AD5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B3C484C82BCD788C001B4AD5 /* Enum */,
+				B35F76E42BCC5B3D009052A2 /* CompositionalLayout */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B3C484C82BCD788C001B4AD5 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				B3C484C92BCD7898001B4AD5 /* BasketDirectionEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		B3C484CB2BCD7953001B4AD5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B35BAE632BCAE268001713A0 /* ProductListCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B3F8E5D52BC9789600EFB96B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8E5D62BC978BD00EFB96B /* CustomBacketView */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		B3F8E5D62BC978BD00EFB96B /* CustomBacketView */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8E5D72BC9791800EFB96B /* CustomBasketView.swift */,
+			);
+			path = CustomBacketView;
+			sourceTree = "<group>";
+		};
+		B3F8E5DE2BC9C95800EFB96B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8E5DF2BC9C98700EFB96B /* Font+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B3F8E6632BCA90E500EFB96B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8E66B2BCA914E00EFB96B /* OpenSans-Bold.ttf */,
+				B3F8E66C2BCA914E00EFB96B /* OpenSans-BoldItalic.ttf */,
+				B3F8E6692BCA914E00EFB96B /* OpenSans-ExtraBold.ttf */,
+				B3F8E6672BCA914E00EFB96B /* OpenSans-ExtraBoldItalic.ttf */,
+				B3F8E6682BCA914E00EFB96B /* OpenSans-Italic.ttf */,
+				B3F8E6662BCA914E00EFB96B /* OpenSans-Light.ttf */,
+				B3F8E66A2BCA914E00EFB96B /* OpenSans-LightItalic.ttf */,
+				B3F8E6642BCA914E00EFB96B /* OpenSans-Medium.ttf */,
+				B3F8E66E2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf */,
+				B3F8E66F2BCA914E00EFB96B /* OpenSans-Regular.ttf */,
+				B3F8E6652BCA914E00EFB96B /* OpenSans-SemiBold.ttf */,
+				B3F8E66D2BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +349,11 @@
 			dependencies = (
 			);
 			name = GetirBootcampFinalProject;
+			packageProductDependencies = (
+				B3B48D0D2BC82BCF00A555A4 /* SnapKit */,
+				B3B48D0F2BC82BD300A555A4 /* Kingfisher */,
+				B3F8E5DC2BC9C4B000EFB96B /* SkeletonView */,
+			);
 			productName = GetirBootcampFinalProject;
 			productReference = B347FEAC2BC6EFF600CCDF3A /* GetirBootcampFinalProject.app */;
 			productType = "com.apple.product-type.application";
@@ -299,6 +426,11 @@
 				Base,
 			);
 			mainGroup = B347FEA32BC6EFF600CCDF3A;
+			packageReferences = (
+				B3B48D0A2BC82B7F00A555A4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B3B48D0B2BC82B8900A555A4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B3F8E5DB2BC9C4B000EFB96B /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = B347FEAD2BC6EFF600CCDF3A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -315,8 +447,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F8E6792BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				B3F8E6712BCA914E00EFB96B /* OpenSans-SemiBold.ttf in Resources */,
+				B3F8E6732BCA914E00EFB96B /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				B3F8E6702BCA914E00EFB96B /* OpenSans-Medium.ttf in Resources */,
+				B3F8E6782BCA914E00EFB96B /* OpenSans-BoldItalic.ttf in Resources */,
+				B3F8E6752BCA914E00EFB96B /* OpenSans-ExtraBold.ttf in Resources */,
 				B347FEB92BC6EFF700CCDF3A /* Assets.xcassets in Resources */,
+				B3F8E6722BCA914E00EFB96B /* OpenSans-Light.ttf in Resources */,
+				B3F8E67A2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf in Resources */,
 				B347FEBC2BC6EFF700CCDF3A /* Base in Resources */,
+				B3F8E67B2BCA914E00EFB96B /* OpenSans-Regular.ttf in Resources */,
+				B3F8E6742BCA914E00EFB96B /* OpenSans-Italic.ttf in Resources */,
+				B3F8E6772BCA914E00EFB96B /* OpenSans-Bold.ttf in Resources */,
+				B3F8E6762BCA914E00EFB96B /* OpenSans-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,13 +486,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B48D032BC815F100A555A4 /* ProductsEntity.swift in Sources */,
+				B3F8E5D82BC9791800EFB96B /* CustomBasketView.swift in Sources */,
+				B35BAE642BCAE268001713A0 /* ProductListCollectionViewCell.swift in Sources */,
+				B3B48D072BC818BF00A555A4 /* ProductsListingInteractor.swift in Sources */,
 				B3B48D012BC7E1C600A555A4 /* NetworkHelper.swift in Sources */,
 				B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */,
 				B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */,
+				B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */,
+				B3B48D092BC820D800A555A4 /* ProductsListingPresenter.swift in Sources */,
 				B347FEB42BC6EFF600CCDF3A /* ProductsListingViewController.swift in Sources */,
 				B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */,
 				B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */,
+				B3F8E5E02BC9C98700EFB96B /* Font+Extension.swift in Sources */,
 				B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */,
+				B3B48D052BC816F400A555A4 /* ProductsRouter.swift in Sources */,
+				B3C484CA2BCD7898001B4AD5 /* BasketDirectionEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +847,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3B48D0A2BC82B7F00A555A4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		B3B48D0B2BC82B8900A555A4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		B3F8E5DB2BC9C4B000EFB96B /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.30.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3B48D0D2BC82BCF00A555A4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3B48D0A2BC82B7F00A555A4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		B3B48D0F2BC82BD300A555A4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3B48D0B2BC82B8900A555A4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B3F8E5DC2BC9C4B000EFB96B /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3F8E5DB2BC9C4B000EFB96B /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B347FEA42BC6EFF600CCDF3A /* Project object */;
 }

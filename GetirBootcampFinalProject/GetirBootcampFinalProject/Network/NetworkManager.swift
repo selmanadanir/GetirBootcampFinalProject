@@ -1,13 +1,13 @@
 //
 //  NetworkManager.swift
-//  NetworkLayer
+//  GetirBootcampFinalProject
 //
-//  Created by Selman Adanır on 12.11.2023.
+//  Created by Selman Adanir on 11.04.2024.
 //
 
 import Foundation
 
-class NetworkManager {
+final class NetworkManager {
     
     static let shared = NetworkManager()
 
