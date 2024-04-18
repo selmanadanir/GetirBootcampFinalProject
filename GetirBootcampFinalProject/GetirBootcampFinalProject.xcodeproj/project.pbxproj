@@ -17,6 +17,8 @@
 		B347FED32BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */; };
 		B35BAE642BCAE268001713A0 /* ProductListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BAE632BCAE268001713A0 /* ProductListCollectionViewCell.swift */; };
 		B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F76E52BCC5B7B009052A2 /* LayoutManger.swift */; };
+		B3B084722BCF94D2000AD508 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B084712BCF94D2000AD508 /* AppIcon.swift */; };
+		B3B084742BCFD407000AD508 /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B084732BCFD407000AD508 /* CustomStepperView.swift */; };
 		B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */; };
 		B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CFB2BC7D16100A555A4 /* AppSize.swift */; };
 		B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */; };
@@ -77,6 +79,8 @@
 		B347FED22BC6EFF700CCDF3A /* GetirBootcampFinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetirBootcampFinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B35BAE632BCAE268001713A0 /* ProductListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCollectionViewCell.swift; sourceTree = "<group>"; };
 		B35F76E52BCC5B7B009052A2 /* LayoutManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManger.swift; sourceTree = "<group>"; };
+		B3B084712BCF94D2000AD508 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		B3B084732BCFD407000AD508 /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		B3B48CFB2BC7D16100A555A4 /* AppSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
 		B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -193,6 +197,14 @@
 			path = CompositionalLayout;
 			sourceTree = "<group>";
 		};
+		B3B084702BCF94C6000AD508 /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				B3B084712BCF94D2000AD508 /* AppIcon.swift */,
+			);
+			path = AppIcon;
+			sourceTree = "<group>";
+		};
 		B3B48CED2BC7AA2400A555A4 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +239,7 @@
 		B3B48CF22BC7BBD700A555A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B3B084702BCF94C6000AD508 /* AppIcon */,
 				B3B48CF32BC7BBE000A555A4 /* AppColor */,
 				B3B48CFA2BC7D15300A555A4 /* AppSize */,
 			);
@@ -302,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				B3F8E5D72BC9791800EFB96B /* CustomBasketView.swift */,
+				B3B084732BCFD407000AD508 /* CustomStepperView.swift */,
 			);
 			path = CustomBacketView;
 			sourceTree = "<group>";
@@ -492,7 +506,9 @@
 				B3B48D012BC7E1C600A555A4 /* NetworkHelper.swift in Sources */,
 				B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */,
 				B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */,
+				B3B084722BCF94D2000AD508 /* AppIcon.swift in Sources */,
 				B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */,
+				B3B084742BCFD407000AD508 /* CustomStepperView.swift in Sources */,
 				B3B48D092BC820D800A555A4 /* ProductsListingPresenter.swift in Sources */,
 				B347FEB42BC6EFF600CCDF3A /* ProductsListingViewController.swift in Sources */,
 				B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */,

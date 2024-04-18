@@ -31,7 +31,7 @@ final class ProductsListingViewController: UIViewController {
     }
     
     // MARK: Helpers
-    func configureCollectionView() {
+    private func configureCollectionView() {
         /// if the user's phone is an iPhone Se, it updates the constraint
         let isWideView: CGFloat = UIScreen.main.bounds.width
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: LayoutManger.generateProductsListingCollectionLayout(isWide: isWideView > 375))
@@ -59,7 +59,7 @@ extension ProductsListingViewController: ProductsListingViewControllerProtocol {
 
 extension ProductsListingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO route to detail screen
+        /// TODO route to detail screen
     }
 }
 
@@ -90,12 +90,31 @@ extension ProductsListingViewController: UICollectionViewDataSource {
         case .horizontal:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.horizontal.name, for: indexPath) as! ProductListCollectionViewCell
             cell.suggestedProductModel = presenter.getSuggestedProduct(index: indexPath.row)
+            cell.firstDelegate = self
+            cell.secondDelegate = self
             return cell
             
         case .vertical:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.vertical.name, for: indexPath) as! ProductListCollectionViewCell
             cell.productModel = presenter.getProduct(index: indexPath.row)
+            cell.firstDelegate = self
+            cell.secondDelegate = self
             return cell
         }
+    }
+}
+
+extension ProductsListingViewController: ProductListCollectionViewCellFirstDelegate {
+    func didTappedFirstButton() {
+        /// TODO maximum 5 products can be selected
+        /// TODO firebase write new count of product
+        /// TODO update cart amount
+    }
+}
+
+extension ProductsListingViewController: ProductListCollectionViewCellSecondDelegate {
+    func didTappedSecondButton() {
+        /// TODO firebase write new count of product
+        /// TODO update cart amount
     }
 }
