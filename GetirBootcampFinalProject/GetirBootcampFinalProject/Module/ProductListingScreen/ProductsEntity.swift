@@ -17,7 +17,7 @@ struct ProductModel: Codable {
 }
 
 // MARK: - ProductClass
-struct ProductItem: Codable {
+struct ProductItem: Codable, Hashable {
     let id, name: String
     let attribute: String?
     let thumbnailURL, imageURL: String
@@ -33,7 +33,7 @@ struct SuggestedProductModel: Codable {
 }
 
 // MARK: - Product
-struct SuggestedProductItem: Codable {
+struct SuggestedProductItem: Codable, Hashable {
     let id: String
     let imageURL: String?
     let price: Double

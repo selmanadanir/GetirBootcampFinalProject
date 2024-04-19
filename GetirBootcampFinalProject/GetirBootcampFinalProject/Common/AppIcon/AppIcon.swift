@@ -11,6 +11,7 @@ struct AppIcon {
     enum Name: String {
         case plus = "plus"
         case trash = "trash"
+        case basket = "basket"
     }
     
     static func getIcon(_ name: Name?,

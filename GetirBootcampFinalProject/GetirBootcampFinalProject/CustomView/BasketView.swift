@@ -1,5 +1,5 @@
 //
-//  CustomBasketView.swift
+//  BasketView.swift
 //  GetirBootcampFinalProject
 //
 //  Created by Selman Adanir on 12.04.2024.
@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 import SkeletonView
 
-final class CustomBasketView: UIView {
+final class BasketView: UIView {
     
     // MARK: View
     private lazy var imageView: UIImageView = {

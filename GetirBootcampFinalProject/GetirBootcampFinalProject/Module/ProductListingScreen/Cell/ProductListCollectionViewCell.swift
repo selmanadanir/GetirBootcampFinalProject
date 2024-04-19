@@ -7,45 +7,42 @@
 
 import UIKit
 
-protocol ProductListCollectionViewCellFirstDelegate: AnyObject {
-    func didTappedFirstButton()
-}
-
-protocol ProductListCollectionViewCellSecondDelegate: AnyObject {
-    func didTappedSecondButton()
+protocol ProductListCollectionViewCellDelegate: AnyObject {
+    func didTappedUpgradeButton(productItem: ProductItem, productCount: Int)
+    func didTappedDowngradeButton(productItem: ProductItem, productCount: Int)
 }
 
 final class ProductListCollectionViewCell: UICollectionViewCell {
     
     // MARK: Views
-    private lazy var customBasketView: CustomBasketView = {
-        let view = CustomBasketView()
+    private lazy var basketView: BasketView = {
+        let view = BasketView()
         view.layer.cornerRadius = 18
         return view
     }()
     
-    private lazy var customStepperView: CustomStepperView = {
-        let view = CustomStepperView()
-        view.firstDelegate = self
-        view.secondDelegate = self
+    private lazy var stepperView: StepperView = {
+        let view = StepperView()
+        view.delegate = self
         return view
     }()
     
     // MARK: Internal Variable
     var productModel: ProductItem? {
         didSet {
-            customBasketView.productModel = productModel
+            basketView.productModel = productModel
+            stepperView.productItem = productModel
         }
     }
     
     var suggestedProductModel: SuggestedProductItem? {
         didSet {
-            customBasketView.suggestedProductModel = suggestedProductModel
+            basketView.suggestedProductModel = suggestedProductModel
+            stepperView.suggestProductItem = suggestedProductModel
         }
     }
     
-    weak var firstDelegate: ProductListCollectionViewCellFirstDelegate?
-    weak var secondDelegate: ProductListCollectionViewCellSecondDelegate?
+    weak var delegate: ProductListCollectionViewCellDelegate?
     
     // MARK: Init
     override init(frame: CGRect) {
@@ -59,30 +56,27 @@ final class ProductListCollectionViewCell: UICollectionViewCell {
     
     // MARK: Private Methods
     private func setupView() {
-        addSubview(customBasketView)
-        addSubview(customStepperView)
+        addSubview(basketView)
+        addSubview(stepperView)
         
-        customBasketView.snp.makeConstraints { make in
+        basketView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        customStepperView.snp.makeConstraints { make in
-            make.top.equalTo(customBasketView.snp.top).offset(-5)
-            make.trailing.equalTo(customBasketView.snp.trailing).offset(10)
+        stepperView.snp.makeConstraints { make in
+            make.top.equalTo(basketView.snp.top).offset(-5)
+            make.trailing.equalTo(basketView.snp.trailing).offset(10)
         }
     }
 }
 
-// MARK: CustomStepperViewFirstDelegate
-extension ProductListCollectionViewCell: CustomStepperViewFirstDelegate {
-    func didTappedFirstButton() {
-        firstDelegate?.didTappedFirstButton()
+// MARK: StepperViewFirstDelegate
+extension ProductListCollectionViewCell: StepperViewDelegate {
+    func didTappedUpgradeButton(productItem: ProductItem, productCount: Int) {
+        delegate?.didTappedUpgradeButton(productItem: productItem, productCount: productCount)
     }
-}
-
-// MARK: CustomStepperViewSecondDelegate
-extension ProductListCollectionViewCell: CustomStepperViewSecondDelegate {
-    func didTappedSecondButton() {
-        secondDelegate?.didTappedSecondButton()
+    
+    func didTappedDowngradeButton(productItem: ProductItem, productCount: Int) {
+        delegate?.didTappedDowngradeButton(productItem: productItem, productCount: productCount)
     }
 }

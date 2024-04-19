@@ -1,5 +1,5 @@
 //
-//  CustomStepperView.swift
+//  StepperView.swift
 //  GetirBootcampFinalProject
 //
 //  Created by Selman Adanir on 17.04.2024.
@@ -7,24 +7,21 @@
 
 import UIKit
 
-protocol CustomStepperViewFirstDelegate: AnyObject {
-    func didTappedFirstButton()
+protocol StepperViewDelegate: AnyObject {
+    func didTappedUpgradeButton(productItem: ProductItem, productCount: Int)
+    func didTappedDowngradeButton(productItem: ProductItem, productCount: Int)
 }
 
-protocol CustomStepperViewSecondDelegate: AnyObject {
-    func didTappedSecondButton()
-}
-
-final class CustomStepperView: UIView {
+final class StepperView: UIView {
     
     // View
-    private lazy var firstButton: UIButton = {
+    private lazy var upgradeButton: UIButton = {
         let view = UIButton(type: .custom)
         view.setImage(AppIcon.getIcon(.plus), for: .normal)
         view.backgroundColor = AppColor.getColor(.white)
         view.layer.cornerRadius = 8
         view.backgroundColor = AppColor.getColor(.white)
-        view.addTarget(self, action: #selector(didTappedFirstButton), for: .touchUpInside)
+        view.addTarget(self, action: #selector(didTappedUpgradeButton), for: .touchUpInside)
         return view
     }()
     
@@ -39,7 +36,7 @@ final class CustomStepperView: UIView {
         return view
     }()
     
-    private lazy var secondButton: UIButton = {
+    private lazy var downgradeButton: UIButton = {
         let view = UIButton(type: .custom)
         view.setImage(AppIcon.getIcon(.trash), for: .normal)
         view.backgroundColor = AppColor.getColor(.white)
@@ -47,7 +44,7 @@ final class CustomStepperView: UIView {
         view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.backgroundColor = AppColor.getColor(.white)
         view.isHidden = true
-        view.addTarget(self, action: #selector(didTappedSecondButton), for: .touchUpInside)
+        view.addTarget(self, action: #selector(didTappedDowngradeButton), for: .touchUpInside)
         return view
     }()
     
@@ -55,62 +52,65 @@ final class CustomStepperView: UIView {
     private var productCount: Int = 1
     
     // MARK: Internal Variable
-    weak var firstDelegate: CustomStepperViewFirstDelegate?
-    weak var secondDelegate: CustomStepperViewSecondDelegate?
+    weak var delegate: StepperViewDelegate?
     
-    // MARK: Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
+    var productItem: ProductItem? {
+        didSet {
+            setupView()
+        }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    var suggestProductItem: SuggestedProductItem? {
+        didSet {
+            setupView()
+        }
     }
     
     // MARK: Private Methods
     private func setupView() {
-        addSubview(firstButton)
+        addSubview(upgradeButton)
         addSubview(label)
-        addSubview(secondButton)
+        addSubview(downgradeButton)
         
-        firstButton.snp.makeConstraints { make in
+        upgradeButton.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.width.height.equalTo(30)
         }
         
         label.snp.makeConstraints { make in
-            make.top.equalTo(firstButton.snp.bottom)
+            make.top.equalTo(upgradeButton.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.width.height.equalTo(30)
         }
         
-        secondButton.snp.makeConstraints { make in
+        downgradeButton.snp.makeConstraints { make in
             make.top.equalTo(label.snp.bottom)
             make.leading.bottom.trailing.equalToSuperview()
             make.width.height.equalTo(30)
         }
     }
     
-    @objc private func didTappedFirstButton() {
-        firstDelegate?.didTappedFirstButton()
+    @objc private func didTappedUpgradeButton() {
+        guard let productItem else { return }
+        delegate?.didTappedUpgradeButton(productItem: productItem, productCount: productCount)
         label.isHidden = false
-        secondButton.isHidden = false
+        downgradeButton.isHidden = false
         label.text = String(productCount)
         if productCount < 5 {
             productCount += 1
         }
-        firstButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        upgradeButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
-    @objc private func didTappedSecondButton() {
-        secondDelegate?.didTappedSecondButton()
+    @objc private func didTappedDowngradeButton() {
+        guard let productItem else { return }
+        delegate?.didTappedDowngradeButton(productItem: productItem, productCount: productCount)
         if productCount > 1 {
             productCount -= 1
         } else if productCount == 1 {
             label.isHidden = true
-            secondButton.isHidden = true
-            firstButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner,
+            downgradeButton.isHidden = true
+            upgradeButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner,
                 .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         }
         label.text = String(productCount)

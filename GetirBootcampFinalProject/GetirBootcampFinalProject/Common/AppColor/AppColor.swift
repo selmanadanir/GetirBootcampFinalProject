@@ -15,6 +15,7 @@ struct AppColor {
         case white = "whiteColorSet"
         case primary = "primaryColorSet"
         case background = "backgroundColorSet"
+        case basketAmount = "basketColorSet"
     }
     
     static func getColor(_ name: Name) -> UIColor? {
