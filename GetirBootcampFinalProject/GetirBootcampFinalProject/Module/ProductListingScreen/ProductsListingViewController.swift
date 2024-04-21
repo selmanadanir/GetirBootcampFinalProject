@@ -18,7 +18,7 @@ protocol ProductsListingViewControllerProtocol: AnyObject {
 
 final class ProductsListingViewController: UIViewController {
     
-    // MARK: View
+    // MARK: - View
     private lazy var collectionView: UICollectionView = {
         let view = UICollectionView()
         return view
@@ -30,10 +30,10 @@ final class ProductsListingViewController: UIViewController {
         return view
     }()
     
-    // MARK: Internal Variable
+    // MARK: - Internal Variable
     var presenter: ProductsListingPresenterProtocol!
     
-    // MARK: ViewDidLoad
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
@@ -42,6 +42,7 @@ final class ProductsListingViewController: UIViewController {
     }
 }
 
+// MARK: - ProductsListingViewControllerProtocol
 extension ProductsListingViewController: ProductsListingViewControllerProtocol {
     
     func reloadData() {
@@ -75,9 +76,10 @@ extension ProductsListingViewController: ProductsListingViewControllerProtocol {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension ProductsListingViewController: UICollectionViewDataSource {
     
-    // MARK: NumberOfSections
+    // MARK: - NumberOfSections
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return BasketDirection.allCases.count
     }
@@ -93,7 +95,7 @@ extension ProductsListingViewController: UICollectionViewDataSource {
         }
     }
     
-    // MARK: CellForItemAt
+    // MARK: - CellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let sectionKind = BasketDirection(rawValue: indexPath.section) else { fatalError() }
@@ -114,6 +116,7 @@ extension ProductsListingViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension ProductsListingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let sectionKind = BasketDirection(rawValue: indexPath.section) else { fatalError() }
@@ -128,9 +131,13 @@ extension ProductsListingViewController: UICollectionViewDelegate {
 //            basketAmountView.amount = basketAmount
             print(presenter.calculateVerticalBasketAmount(index: indexPath.row))
         }
+        
+        guard let model = presenter.getProduct(index: indexPath.row) else { return }
+        presenter.showDetailScreen(productItem: model)
     }
 }
 
+// MARK: - ProductListCollectionViewCellDelegate
 extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int) {
         presenter.upgradeChosenProducs(productItem: productItem)
@@ -148,6 +155,7 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
     }
 }
 
+// MARK: - BasketAmountViewDelegate
 extension ProductsListingViewController: BasketAmountViewDelegate {
     func clickBasketAmountButton() {
         print("clickBasketAmountButton")

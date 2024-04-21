@@ -5,10 +5,14 @@
 //  Created by Selman Adanir on 11.04.2024.
 //
 
-import Foundation
+import UIKit
+
+enum ProductsListingRoutes {
+    case detailView
+}
 
 protocol ProductsRouterProtocol: AnyObject {
-    func navigateToDetailsScreen()
+    func navigateToDetailsScreen(productItem: ProductItem, _ route: ProductsListingRoutes)
 }
 
 final class ProductsListingRouter {
@@ -33,8 +37,13 @@ final class ProductsListingRouter {
     }
 }
 
+// MARK: - ProductsRouterProtocol
 extension ProductsListingRouter: ProductsRouterProtocol {
-    func navigateToDetailsScreen() {
-        /// TODO  navigate detail
+    func navigateToDetailsScreen(productItem: ProductItem, _ route: ProductsListingRoutes) {
+        switch route {
+        case .detailView:
+            let detailViewController = DetailRouter.createModule(productItem: productItem)
+            viewController?.navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
 }

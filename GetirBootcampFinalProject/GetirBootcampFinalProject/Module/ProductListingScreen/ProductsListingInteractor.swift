@@ -23,6 +23,7 @@ final class ProductsListingInteractor {
     var output: ProductsListingOutputProtocol?
 }
 
+// MARK: - ProductsListingInteractorProtocol
 extension ProductsListingInteractor: ProductsListingInteractorProtocol {
     
     func fetchProducts() {

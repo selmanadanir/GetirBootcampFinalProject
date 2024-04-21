@@ -51,10 +51,10 @@ final class BasketView: UIView {
         return view
     }()
     
+    // MARK: - Internal Method
     var productModel: ProductItem? {
         didSet {
             feedProductView(by: productModel)
-            setupView()
         }
     }
     
@@ -62,8 +62,17 @@ final class BasketView: UIView {
     var suggestedProductModel: SuggestedProductItem? {
         didSet {
             feedSuggestedProductView(by: suggestedProductModel)
-            setupView()
         }
+    }
+    
+    // MARK: - Life Cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: Private Methods
@@ -120,5 +129,22 @@ final class BasketView: UIView {
         }
         guard let url = URL(string: newImageUrl) else { return }
         imageView.kf.setImage(with: url)
+    }
+    
+    // MARK: - Internal Method
+    func updateViewForProductDetailScreen() {
+        imageView.layer.borderWidth = 0
+        firstLabel.font = .font(.openSans, .bold, size: 20)
+        firstLabel.textAlignment = .center
+        
+        secondLabel.font = .font(.openSans, .semiBold, size: 16)
+        secondLabel.textAlignment = .center
+        
+        thirdLabel.font = .font(.openSans, .semiBold, size: 12)
+        thirdLabel.textAlignment = .center
+        
+        imageView.snp.makeConstraints { make in
+            make.height.width.equalTo(200)
+        }
     }
 }

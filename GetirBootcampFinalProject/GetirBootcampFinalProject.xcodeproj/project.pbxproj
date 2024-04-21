@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B33E7B4B2BD536AE003ACD1A /* BottomBasketButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */; };
+		B33E7B4D2BD582C6003ACD1A /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */; };
 		B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEAF2BC6EFF600CCDF3A /* AppDelegate.swift */; };
 		B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEB12BC6EFF600CCDF3A /* SceneDelegate.swift */; };
 		B347FEB42BC6EFF600CCDF3A /* ProductsListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEB32BC6EFF600CCDF3A /* ProductsListingViewController.swift */; };
@@ -34,6 +36,10 @@
 		B3C484CA2BCD7898001B4AD5 /* BasketDirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C484C92BCD7898001B4AD5 /* BasketDirectionEnum.swift */; };
 		B3EDF98B2BD297BB00B7BA86 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDF98A2BD297BB00B7BA86 /* String+Extension.swift */; };
 		B3EDF98D2BD297F000B7BA86 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDF98C2BD297F000B7BA86 /* Double+Extension.swift */; };
+		B3F4904F2BD2B3D000CD9E16 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F4904E2BD2B3D000CD9E16 /* DetailViewController.swift */; };
+		B3F490512BD2BFB600CD9E16 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F490502BD2BFB600CD9E16 /* DetailPresenter.swift */; };
+		B3F490532BD2C0CD00CD9E16 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F490522BD2C0CD00CD9E16 /* DetailInteractor.swift */; };
+		B3F490552BD2C20D00CD9E16 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F490542BD2C20D00CD9E16 /* DetailRouter.swift */; };
 		B3F8E5D82BC9791800EFB96B /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F8E5D72BC9791800EFB96B /* BasketView.swift */; };
 		B3F8E5DD2BC9C4B000EFB96B /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = B3F8E5DC2BC9C4B000EFB96B /* SkeletonView */; };
 		B3F8E5E02BC9C98700EFB96B /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F8E5DF2BC9C98700EFB96B /* Font+Extension.swift */; };
@@ -69,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBasketButtonView.swift; sourceTree = "<group>"; };
+		B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		B347FEAC2BC6EFF600CCDF3A /* GetirBootcampFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetirBootcampFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B347FEAF2BC6EFF600CCDF3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B347FEB12BC6EFF600CCDF3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +106,10 @@
 		B3C484C92BCD7898001B4AD5 /* BasketDirectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDirectionEnum.swift; sourceTree = "<group>"; };
 		B3EDF98A2BD297BB00B7BA86 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B3EDF98C2BD297F000B7BA86 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		B3F4904E2BD2B3D000CD9E16 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B3F490502BD2BFB600CD9E16 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		B3F490522BD2C0CD00CD9E16 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		B3F490542BD2C20D00CD9E16 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		B3F8E5D72BC9791800EFB96B /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		B3F8E5DF2BC9C98700EFB96B /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		B3F8E6642BCA914E00EFB96B /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
@@ -235,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				B3B48CEF2BC7AA6100A555A4 /* ProductListingScreen */,
+				B3F4904D2BD2B3B500CD9E16 /* DetailScreen */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -320,12 +333,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B3F4904D2BD2B3B500CD9E16 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B3F4904E2BD2B3D000CD9E16 /* DetailViewController.swift */,
+				B3F490502BD2BFB600CD9E16 /* DetailPresenter.swift */,
+				B3F490522BD2C0CD00CD9E16 /* DetailInteractor.swift */,
+				B3F490542BD2C20D00CD9E16 /* DetailRouter.swift */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
 		B3F8E5D52BC9789600EFB96B /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				B3F8E5D72BC9791800EFB96B /* BasketView.swift */,
 				B3B084732BCFD407000AD508 /* StepperView.swift */,
 				B36079632BD0F6A100267F51 /* BasketAmountView.swift */,
+				B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -336,6 +361,7 @@
 				B3F8E5DF2BC9C98700EFB96B /* Font+Extension.swift */,
 				B3EDF98A2BD297BB00B7BA86 /* String+Extension.swift */,
 				B3EDF98C2BD297F000B7BA86 /* Double+Extension.swift */,
+				B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,14 +538,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B48D032BC815F100A555A4 /* ProductsEntity.swift in Sources */,
+				B3F490532BD2C0CD00CD9E16 /* DetailInteractor.swift in Sources */,
 				B3EDF98B2BD297BB00B7BA86 /* String+Extension.swift in Sources */,
+				B3F490552BD2C20D00CD9E16 /* DetailRouter.swift in Sources */,
+				B3F4904F2BD2B3D000CD9E16 /* DetailViewController.swift in Sources */,
 				B3F8E5D82BC9791800EFB96B /* BasketView.swift in Sources */,
 				B36079662BD0FF5C00267F51 /* AppText.swift in Sources */,
 				B35BAE642BCAE268001713A0 /* ProductListCollectionViewCell.swift in Sources */,
 				B3B48D072BC818BF00A555A4 /* ProductsListingInteractor.swift in Sources */,
 				B3B48D012BC7E1C600A555A4 /* NetworkHelper.swift in Sources */,
+				B33E7B4B2BD536AE003ACD1A /* BottomBasketButtonView.swift in Sources */,
 				B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */,
 				B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */,
+				B3F490512BD2BFB600CD9E16 /* DetailPresenter.swift in Sources */,
 				B3B084722BCF94D2000AD508 /* AppIcon.swift in Sources */,
 				B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */,
 				B3B084742BCFD407000AD508 /* StepperView.swift in Sources */,
@@ -532,6 +563,7 @@
 				B3F8E5E02BC9C98700EFB96B /* Font+Extension.swift in Sources */,
 				B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */,
 				B3B48D052BC816F400A555A4 /* ProductsRouter.swift in Sources */,
+				B33E7B4D2BD582C6003ACD1A /* View+Extension.swift in Sources */,
 				B3C484CA2BCD7898001B4AD5 /* BasketDirectionEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

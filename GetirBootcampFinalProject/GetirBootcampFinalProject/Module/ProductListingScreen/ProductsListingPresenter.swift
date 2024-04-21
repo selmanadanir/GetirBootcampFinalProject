@@ -19,6 +19,7 @@ protocol ProductsListingPresenterProtocol: AnyObject {
     func downgradeChosenProducs(productItem: ProductItem)
     func getChosenProductItem() -> [ProductItem: Int]
     func getBasketAmount() -> Double
+    func showDetailScreen(productItem: ProductItem)
 }
 
 final class ProductsListingPresenter {
@@ -98,8 +99,13 @@ extension ProductsListingPresenter: ProductsListingPresenterProtocol {
         }
         return basketAmount
     }
+    
+    func showDetailScreen(productItem: ProductItem) {
+        router.navigateToDetailsScreen(productItem: productItem, .detailView)
+    }
 }
 
+// MARK: - ProductsListingOutputProtocol
 extension ProductsListingPresenter: ProductsListingOutputProtocol {
     
     func onSuccesProducts(products: [ProductModel]) {
