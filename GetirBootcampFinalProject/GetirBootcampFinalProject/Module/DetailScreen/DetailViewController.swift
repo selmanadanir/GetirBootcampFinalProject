@@ -11,6 +11,7 @@ protocol DetailViewControllerProtocol: AnyObject {
     func showDetailScreen()
     func showAlert()
     func setRightBarButton()
+    func popViewController()
 }
 
 final class DetailViewController: UIViewController {
@@ -65,6 +66,10 @@ final class DetailViewController: UIViewController {
             make.height.equalTo(100)
         }
     }
+    
+    @objc private func popViewConroller(){
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - DetailViewControllerProtocol
@@ -80,6 +85,12 @@ extension DetailViewController: DetailViewControllerProtocol {
     
     func setRightBarButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: basketAmountView)
+    }
+    
+    func popViewController() {
+        let cancelButton = UIBarButtonItem(image: UIImage(systemName: "multiply"), style: .plain, target: self, action: #selector(popViewConroller))
+        self.navigationController?.navigationBar.tintColor = AppColor.getColor(.white)
+        navigationItem.leftBarButtonItem = cancelButton
     }
 }
 

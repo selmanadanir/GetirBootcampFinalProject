@@ -31,6 +31,7 @@ final class DetailPresenter {
 extension DetailPresenter: DetailPresenterProtocol {
     func viewDidLoad() {
         view.showDetailScreen()
+        view.popViewController()
     }
     
     func getProductItem() -> ProductItem? {
