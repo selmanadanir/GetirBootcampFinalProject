@@ -11,6 +11,7 @@ struct AppText {
     enum Text: String {
         case productsScreenTitle = "Ürünler"
         case addToBasket = "Sepete Ekle"
+        case detailScreenTitle = "Ürün Detayı"
     }
     
     static func getText(_ text: Text) -> String {

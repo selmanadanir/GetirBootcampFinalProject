@@ -8,6 +8,7 @@
 import UIKit
 
 protocol DetailViewControllerProtocol: AnyObject {
+    func setTitle()
     func showDetailScreen()
     func showAlert()
     func setRightBarButton()
@@ -74,6 +75,11 @@ final class DetailViewController: UIViewController {
 
 // MARK: - DetailViewControllerProtocol
 extension DetailViewController: DetailViewControllerProtocol {
+    
+    func setTitle() {
+        title = AppText.getText(.detailScreenTitle)
+    }
+    
     func showDetailScreen() {
         basketView.productModel = presenter.getProductItem()
         bottomBasketButtonView.productModel = presenter.getProductItem()
