@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B33E7B4B2BD536AE003ACD1A /* BottomBasketButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */; };
 		B33E7B4D2BD582C6003ACD1A /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */; };
+		B33E7B4F2BD68EC9003ACD1A /* StepperViewForProductListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */; };
 		B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEAF2BC6EFF600CCDF3A /* AppDelegate.swift */; };
 		B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEB12BC6EFF600CCDF3A /* SceneDelegate.swift */; };
 		B347FEB42BC6EFF600CCDF3A /* ProductsListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEB32BC6EFF600CCDF3A /* ProductsListingViewController.swift */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBasketButtonView.swift; sourceTree = "<group>"; };
 		B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperViewForProductListing.swift; sourceTree = "<group>"; };
 		B347FEAC2BC6EFF600CCDF3A /* GetirBootcampFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetirBootcampFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B347FEAF2BC6EFF600CCDF3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B347FEB12BC6EFF600CCDF3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				B3B084732BCFD407000AD508 /* StepperView.swift */,
 				B36079632BD0F6A100267F51 /* BasketAmountView.swift */,
 				B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */,
+				B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */,
 				B3F490512BD2BFB600CD9E16 /* DetailPresenter.swift in Sources */,
 				B3B084722BCF94D2000AD508 /* AppIcon.swift in Sources */,
+				B33E7B4F2BD68EC9003ACD1A /* StepperViewForProductListing.swift in Sources */,
 				B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */,
 				B3B084742BCFD407000AD508 /* StepperView.swift in Sources */,
 				B3B48D092BC820D800A555A4 /* ProductsListingPresenter.swift in Sources */,

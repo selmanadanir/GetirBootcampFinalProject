@@ -21,8 +21,8 @@ final class ProductListCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var stepperView: StepperView = {
-        let view = StepperView()
+    private lazy var stepperView: StepperViewForProductListing = {
+        let view = StepperViewForProductListing()
         view.delegate = self
         return view
     }()
@@ -71,7 +71,7 @@ final class ProductListCollectionViewCell: UICollectionViewCell {
 }
 
 // MARK: StepperViewFirstDelegate
-extension ProductListCollectionViewCell: StepperViewDelegate {
+extension ProductListCollectionViewCell: StepperViewForProductListingProtocol {
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int) {
         delegate?.didTappedUpgradeButton(productItem: productItem, productCount: productCount)
     }

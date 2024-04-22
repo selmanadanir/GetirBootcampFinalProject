@@ -1,24 +1,18 @@
 //
-//  StepperView.swift
+//  StepperViewForProductListing.swift
 //  GetirBootcampFinalProject
 //
-//  Created by Selman Adanir on 17.04.2024.
+//  Created by Selman Adanir on 22.04.2024.
 //
 
 import UIKit
 
-enum SectionStepperView {
-    case productList
-    case productDetail
-    case shoppingCard
-}
-
-protocol StepperViewDelegate: AnyObject {
+protocol StepperViewForProductListingProtocol: AnyObject {
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int)
     func didTappedDowngradeButton(productItem: ProductItem, productCount: Int)
 }
 
-final class StepperView: UIView {
+final class StepperViewForProductListing: UIView {
     
     // MARK: - View
     private lazy var upgradeButton: UIButton = {
@@ -26,7 +20,6 @@ final class StepperView: UIView {
         view.setImage(AppIcon.getIcon(.plus), for: .normal)
         view.backgroundColor = AppColor.getColor(.white)
         view.layer.cornerRadius = 8
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         view.shadowColor = AppColor.getColor(.head)
         view.shadowOffset = .zero
         view.shadowOpacity = 0.2
@@ -37,13 +30,14 @@ final class StepperView: UIView {
     private lazy var label: UILabel = {
         let view = UILabel()
         view.text = String(productCount)
-        view.font = .font(.openSans, .bold, size: isForBottomBasketButton ? 16 : 14)
+        view.font = .font(.openSans, .bold, size: 12)
         view.textColor = AppColor.getColor(.white)
         view.textAlignment = .center
         view.backgroundColor = AppColor.getColor(.primary)
         view.layer.shadowColor = AppColor.getColor(.head)?.cgColor
         view.layer.shadowOffset = .zero
         view.layer.shadowOpacity = 0.1
+        view.isHidden = true
         return view
     }()
     
@@ -52,7 +46,8 @@ final class StepperView: UIView {
         view.setImage(AppIcon.getIcon(.trash), for: .normal)
         view.backgroundColor = AppColor.getColor(.white)
         view.layer.cornerRadius = 8
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner,]
+        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        view.isHidden = true
         view.shadowColor = AppColor.getColor(.head)
         view.shadowOffset = .zero
         view.shadowOpacity = 0.1
@@ -61,8 +56,8 @@ final class StepperView: UIView {
     }()
     
     private lazy var stackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [downgradeButton, label, upgradeButton])
-        view.axis = .horizontal
+        let view = UIStackView(arrangedSubviews: [upgradeButton, label, downgradeButton])
+        view.axis = .vertical
         view.distribution = .fillEqually
         view.layer.shadowColor = AppColor.getColor(.head)?.cgColor
         view.layer.shadowOffset = .zero
@@ -72,27 +67,25 @@ final class StepperView: UIView {
     
     // MARK: - Private Variable
     private var productCount: Int = 1
-    private var isForBottomBasketButton: Bool
     
     // MARK: - Internal Variable
-    weak var delegate: StepperViewDelegate?
+    weak var delegate: StepperViewForProductListingProtocol?
     
     var productItem: ProductItem? {
         didSet {
-//            setupView()
+            //            setupView()
         }
     }
     
     var suggestProductItem: SuggestedProductItem? {
         didSet {
-//            setupView()
+            //            setupView()
         }
     }
     
     // MARK: - Init
-    init(isForBottomBasketButton: Bool) {
-        self.isForBottomBasketButton = isForBottomBasketButton
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupView()
     }
     
@@ -104,41 +97,58 @@ final class StepperView: UIView {
     private func setupView() {
         addSubview(stackView)
         
-        if isForBottomBasketButton {
-            stackView.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-                make.width.equalTo(150)
-                make.height.equalTo(50)
-            }
-        } else {
-            stackView.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-                make.width.equalTo(90)
-                make.height.equalTo(30)
-            }
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
     }
     
     @objc private func didTappedUpgradeButton() {
+        
         guard let productItem else { return }
         delegate?.didTappedUpgradeButton(productItem: productItem, productCount: productCount)
+        label.isHidden = false
+        downgradeButton.isHidden = false
         label.text = String(productCount)
+        updateSetupForUpgradeView()
         if productCount < 5 {
             productCount += 1
-            downgradeButton.setImage(AppIcon.getIcon(.minus), for: .normal)
         }
-        label.text = String(productCount)
+        upgradeButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
     }
     
     @objc private func didTappedDowngradeButton() {
+        
         guard let productItem else { return }
         delegate?.didTappedDowngradeButton(productItem: productItem, productCount: productCount)
         if productCount > 1 {
             productCount -= 1
         }
         if productCount == 1 {
-            downgradeButton.setImage(AppIcon.getIcon(.trash), for: .normal)
+            label.isHidden = true
+            downgradeButton.isHidden = true
+            updateSetupForDowngradeView()
+            upgradeButton.layer.maskedCorners = [.layerMinXMinYCorner ,.layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         }
         label.text = String(productCount)
+        
+    }
+    
+    private func updateSetupForUpgradeView() {
+        stackView.snp.updateConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(30)
+            make.height.equalTo(90)
+        }
+    }
+    
+    private func updateSetupForDowngradeView() {
+        stackView.snp.updateConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(30)
+            make.height.equalTo(30)
+        }
     }
 }

@@ -12,6 +12,7 @@ struct AppIcon {
         case plus = "plus"
         case trash = "trash"
         case basket = "basket"
+        case minus = "minus"
     }
     
     static func getIcon(_ name: Name?,

@@ -38,7 +38,7 @@ final class BottomBasketButtonView: UIView {
     }()
     
     private lazy var stepperView: StepperView = {
-        let view = StepperView(isVertical: false)
+        let view = StepperView(isForBottomBasketButton: true)
         view.isHidden = true
         view.delegate = self
         return view
@@ -85,11 +85,9 @@ final class BottomBasketButtonView: UIView {
             make.trailing.equalTo(contentView.snp.trailing).inset(16)
             make.height.equalTo(50)
         }
-        let screenWidth: CGFloat = UIScreen.main.bounds.width
         stepperView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).inset(16)
-            make.leading.equalTo(contentView.snp.leading).inset(screenWidth / 2 - 75)
-            make.trailing.equalTo(contentView.snp.trailing)
+            make.centerX.equalTo(contentView.snp.centerX)
         }
     }
     
