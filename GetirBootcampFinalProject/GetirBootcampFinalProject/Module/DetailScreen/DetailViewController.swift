@@ -18,6 +18,12 @@ protocol DetailViewControllerProtocol: AnyObject {
 final class DetailViewController: UIViewController {
 
     // MARK: - View
+    private lazy var basketAmountView: BasketAmountView = {
+        let view = BasketAmountView()
+        view.delegate = self
+        return view
+    }()
+    
     private lazy var basketView: BasketView = {
         let view = BasketView()
         view.shadowRadius = 3
@@ -30,12 +36,6 @@ final class DetailViewController: UIViewController {
     
     private lazy var bottomBasketButtonView: BottomBasketButtonView = {
         let view = BottomBasketButtonView()
-        view.delegate = self
-        return view
-    }()
-    
-    private lazy var basketAmountView: BasketAmountView = {
-        let view = BasketAmountView()
         view.delegate = self
         return view
     }()

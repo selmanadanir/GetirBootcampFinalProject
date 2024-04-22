@@ -10,6 +10,8 @@
 		B3235E4F2BD6A68E00863FFF /* ShoppingCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E4E2BD6A68E00863FFF /* ShoppingCardPresenter.swift */; };
 		B3235E512BD6A69F00863FFF /* ShoppingCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E502BD6A69F00863FFF /* ShoppingCardInteractor.swift */; };
 		B3235E532BD6A6AD00863FFF /* ShoppingCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E522BD6A6AD00863FFF /* ShoppingCardRouter.swift */; };
+		B3235E552BD6B93800863FFF /* Label+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E542BD6B93800863FFF /* Label+Extension.swift */; };
+		B3235E572BD6B97800863FFF /* ComplateOrderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E562BD6B97800863FFF /* ComplateOrderButtonView.swift */; };
 		B33E7B4B2BD536AE003ACD1A /* BottomBasketButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */; };
 		B33E7B4D2BD582C6003ACD1A /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */; };
 		B33E7B4F2BD68EC9003ACD1A /* StepperViewForProductListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */; };
@@ -39,6 +41,7 @@
 		B3B48D0E2BC82BCF00A555A4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B3B48D0D2BC82BCF00A555A4 /* SnapKit */; };
 		B3B48D102BC82BD300A555A4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B3B48D0F2BC82BD300A555A4 /* Kingfisher */; };
 		B3C484CA2BCD7898001B4AD5 /* BasketDirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C484C92BCD7898001B4AD5 /* BasketDirectionEnum.swift */; };
+		B3CAA9892BD6F86600A5D63F /* CoupleStrikethroughLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CAA9882BD6F86600A5D63F /* CoupleStrikethroughLabel.swift */; };
 		B3EDF98B2BD297BB00B7BA86 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDF98A2BD297BB00B7BA86 /* String+Extension.swift */; };
 		B3EDF98D2BD297F000B7BA86 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDF98C2BD297F000B7BA86 /* Double+Extension.swift */; };
 		B3F4904F2BD2B3D000CD9E16 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F4904E2BD2B3D000CD9E16 /* DetailViewController.swift */; };
@@ -83,6 +86,8 @@
 		B3235E4E2BD6A68E00863FFF /* ShoppingCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardPresenter.swift; sourceTree = "<group>"; };
 		B3235E502BD6A69F00863FFF /* ShoppingCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardInteractor.swift; sourceTree = "<group>"; };
 		B3235E522BD6A6AD00863FFF /* ShoppingCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardRouter.swift; sourceTree = "<group>"; };
+		B3235E542BD6B93800863FFF /* Label+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Extension.swift"; sourceTree = "<group>"; };
+		B3235E562BD6B97800863FFF /* ComplateOrderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplateOrderButtonView.swift; sourceTree = "<group>"; };
 		B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBasketButtonView.swift; sourceTree = "<group>"; };
 		B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperViewForProductListing.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 		B3B48D062BC818BF00A555A4 /* ProductsListingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListingInteractor.swift; sourceTree = "<group>"; };
 		B3B48D082BC820D800A555A4 /* ProductsListingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListingPresenter.swift; sourceTree = "<group>"; };
 		B3C484C92BCD7898001B4AD5 /* BasketDirectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDirectionEnum.swift; sourceTree = "<group>"; };
+		B3CAA9882BD6F86600A5D63F /* CoupleStrikethroughLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleStrikethroughLabel.swift; sourceTree = "<group>"; };
 		B3EDF98A2BD297BB00B7BA86 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B3EDF98C2BD297F000B7BA86 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		B3F4904E2BD2B3D000CD9E16 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -374,6 +380,8 @@
 				B36079632BD0F6A100267F51 /* BasketAmountView.swift */,
 				B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */,
 				B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */,
+				B3235E562BD6B97800863FFF /* ComplateOrderButtonView.swift */,
+				B3CAA9882BD6F86600A5D63F /* CoupleStrikethroughLabel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -385,6 +393,7 @@
 				B3EDF98A2BD297BB00B7BA86 /* String+Extension.swift */,
 				B3EDF98C2BD297F000B7BA86 /* Double+Extension.swift */,
 				B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */,
+				B3235E542BD6B93800863FFF /* Label+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -574,6 +583,7 @@
 				B33E7B4B2BD536AE003ACD1A /* BottomBasketButtonView.swift in Sources */,
 				B3B48CFF2BC7E1B400A555A4 /* NetworkManager.swift in Sources */,
 				B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */,
+				B3235E572BD6B97800863FFF /* ComplateOrderButtonView.swift in Sources */,
 				B3F490512BD2BFB600CD9E16 /* DetailPresenter.swift in Sources */,
 				B3B084722BCF94D2000AD508 /* AppIcon.swift in Sources */,
 				B33E7B4F2BD68EC9003ACD1A /* StepperViewForProductListing.swift in Sources */,
@@ -586,10 +596,12 @@
 				B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */,
 				B36079642BD0F6A100267F51 /* BasketAmountView.swift in Sources */,
 				B3EDF98D2BD297F000B7BA86 /* Double+Extension.swift in Sources */,
+				B3235E552BD6B93800863FFF /* Label+Extension.swift in Sources */,
 				B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */,
 				B3F8E5E02BC9C98700EFB96B /* Font+Extension.swift in Sources */,
 				B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */,
 				B3B48D052BC816F400A555A4 /* ProductsRouter.swift in Sources */,
+				B3CAA9892BD6F86600A5D63F /* CoupleStrikethroughLabel.swift in Sources */,
 				B33E7B4D2BD582C6003ACD1A /* View+Extension.swift in Sources */,
 				B3235E532BD6A6AD00863FFF /* ShoppingCardRouter.swift in Sources */,
 				B3C484CA2BCD7898001B4AD5 /* BasketDirectionEnum.swift in Sources */,

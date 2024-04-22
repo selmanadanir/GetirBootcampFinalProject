@@ -23,6 +23,8 @@ extension ShoppingCardPresenter: ShoppingCardPresenterProtocol {
     func viewDidLoad() {
         view.setTitle()
         view.showDetailScreen()
+        view.setLeftBarButton()
+        view.setRightBarButton()
     }
 }
 
