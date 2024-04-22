@@ -7,8 +7,12 @@
 
 import Foundation
 
+enum DetailRouterRoutes {
+    case detailView
+}
+
 protocol DetailRouterProtocol: AnyObject {
-    
+    func navigateToShoppingCardScreen(_ route: DetailRouterRoutes)
 }
 
 final class DetailRouter {
@@ -37,5 +41,11 @@ final class DetailRouter {
 
 // MARK: - DetailRouterProtocol
 extension DetailRouter: DetailRouterProtocol {
-    
+    func navigateToShoppingCardScreen(_ route: DetailRouterRoutes) {
+        switch route {
+        case .detailView:
+            let shoppingCardViewController = ShoppingCardRouter.createModule()
+            viewController?.navigationController?.pushViewController(shoppingCardViewController, animated: true)
+        }
+    }
 }

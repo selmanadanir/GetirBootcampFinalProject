@@ -12,6 +12,7 @@ struct AppText {
         case productsScreenTitle = "Ürünler"
         case addToBasket = "Sepete Ekle"
         case detailScreenTitle = "Ürün Detayı"
+        case shoppingCardTitle = "Sepetim"
     }
     
     static func getText(_ text: Text) -> String {

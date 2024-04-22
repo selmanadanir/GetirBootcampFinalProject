@@ -122,7 +122,6 @@ extension DetailViewController: BottomBasketButtonViewDelegate {
 
 extension DetailViewController: BasketAmountViewDelegate {
     func clickBasketAmountButton() {
-        /// TODO: route ShoppingCartScreen
-        print("clickBasketAmountButton")
+        presenter.showShoppingCardScreen()
     }
 }

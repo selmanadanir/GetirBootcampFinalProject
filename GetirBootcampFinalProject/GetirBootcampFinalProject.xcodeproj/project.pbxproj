@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3235E4F2BD6A68E00863FFF /* ShoppingCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E4E2BD6A68E00863FFF /* ShoppingCardPresenter.swift */; };
+		B3235E512BD6A69F00863FFF /* ShoppingCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E502BD6A69F00863FFF /* ShoppingCardInteractor.swift */; };
+		B3235E532BD6A6AD00863FFF /* ShoppingCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3235E522BD6A6AD00863FFF /* ShoppingCardRouter.swift */; };
 		B33E7B4B2BD536AE003ACD1A /* BottomBasketButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */; };
 		B33E7B4D2BD582C6003ACD1A /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */; };
 		B33E7B4F2BD68EC9003ACD1A /* StepperViewForProductListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */; };
+		B33E7B522BD6A60B003ACD1A /* ShoppingCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E7B512BD6A60B003ACD1A /* ShoppingCardViewController.swift */; };
 		B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEAF2BC6EFF600CCDF3A /* AppDelegate.swift */; };
 		B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEB12BC6EFF600CCDF3A /* SceneDelegate.swift */; };
 		B347FEB42BC6EFF600CCDF3A /* ProductsListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347FEB32BC6EFF600CCDF3A /* ProductsListingViewController.swift */; };
@@ -76,9 +80,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3235E4E2BD6A68E00863FFF /* ShoppingCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardPresenter.swift; sourceTree = "<group>"; };
+		B3235E502BD6A69F00863FFF /* ShoppingCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardInteractor.swift; sourceTree = "<group>"; };
+		B3235E522BD6A6AD00863FFF /* ShoppingCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardRouter.swift; sourceTree = "<group>"; };
 		B33E7B4A2BD536AE003ACD1A /* BottomBasketButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBasketButtonView.swift; sourceTree = "<group>"; };
 		B33E7B4C2BD582C6003ACD1A /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		B33E7B4E2BD68EC9003ACD1A /* StepperViewForProductListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperViewForProductListing.swift; sourceTree = "<group>"; };
+		B33E7B512BD6A60B003ACD1A /* ShoppingCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardViewController.swift; sourceTree = "<group>"; };
 		B347FEAC2BC6EFF600CCDF3A /* GetirBootcampFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetirBootcampFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B347FEAF2BC6EFF600CCDF3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B347FEB12BC6EFF600CCDF3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +164,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B33E7B502BD6A51B003ACD1A /* ShoppingCardScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B33E7B512BD6A60B003ACD1A /* ShoppingCardViewController.swift */,
+				B3235E4E2BD6A68E00863FFF /* ShoppingCardPresenter.swift */,
+				B3235E502BD6A69F00863FFF /* ShoppingCardInteractor.swift */,
+				B3235E522BD6A6AD00863FFF /* ShoppingCardRouter.swift */,
+			);
+			path = ShoppingCardScreen;
+			sourceTree = "<group>";
+		};
 		B347FEA32BC6EFF600CCDF3A = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +269,7 @@
 			children = (
 				B3B48CEF2BC7AA6100A555A4 /* ProductListingScreen */,
 				B3F4904D2BD2B3B500CD9E16 /* DetailScreen */,
+				B33E7B502BD6A51B003ACD1A /* ShoppingCardScreen */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -545,6 +565,7 @@
 				B3EDF98B2BD297BB00B7BA86 /* String+Extension.swift in Sources */,
 				B3F490552BD2C20D00CD9E16 /* DetailRouter.swift in Sources */,
 				B3F4904F2BD2B3D000CD9E16 /* DetailViewController.swift in Sources */,
+				B3235E4F2BD6A68E00863FFF /* ShoppingCardPresenter.swift in Sources */,
 				B3F8E5D82BC9791800EFB96B /* BasketView.swift in Sources */,
 				B36079662BD0FF5C00267F51 /* AppText.swift in Sources */,
 				B35BAE642BCAE268001713A0 /* ProductListCollectionViewCell.swift in Sources */,
@@ -559,6 +580,8 @@
 				B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */,
 				B3B084742BCFD407000AD508 /* StepperView.swift in Sources */,
 				B3B48D092BC820D800A555A4 /* ProductsListingPresenter.swift in Sources */,
+				B3235E512BD6A69F00863FFF /* ShoppingCardInteractor.swift in Sources */,
+				B33E7B522BD6A60B003ACD1A /* ShoppingCardViewController.swift in Sources */,
 				B347FEB42BC6EFF600CCDF3A /* ProductsListingViewController.swift in Sources */,
 				B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */,
 				B36079642BD0F6A100267F51 /* BasketAmountView.swift in Sources */,
@@ -568,6 +591,7 @@
 				B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */,
 				B3B48D052BC816F400A555A4 /* ProductsRouter.swift in Sources */,
 				B33E7B4D2BD582C6003ACD1A /* View+Extension.swift in Sources */,
+				B3235E532BD6A6AD00863FFF /* ShoppingCardRouter.swift in Sources */,
 				B3C484CA2BCD7898001B4AD5 /* BasketDirectionEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

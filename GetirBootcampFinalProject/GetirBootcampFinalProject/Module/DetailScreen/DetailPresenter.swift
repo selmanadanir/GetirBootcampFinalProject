@@ -13,6 +13,7 @@ protocol DetailPresenterProtocol: AnyObject {
     func upgradeChosenProducs(productItem: ProductItem)
     func downgradeChosenProducs(productItem: ProductItem)
     func getBasketAmount() -> Double
+    func showShoppingCardScreen()
 }
 
 final class DetailPresenter {
@@ -65,6 +66,10 @@ extension DetailPresenter: DetailPresenterProtocol {
             basketAmount += item.price * Double(count)
         }
         return basketAmount
+    }
+    
+    func showShoppingCardScreen() {
+        router.navigateToShoppingCardScreen(.detailView)
     }
 }
 
