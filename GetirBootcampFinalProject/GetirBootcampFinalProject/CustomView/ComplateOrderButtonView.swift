@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ComplateOrderButtonViewDelegate: AnyObject {
+    func tappedComplateOrderButton()
+}
+
 final class ComplateOrderButtonView: UIView {
     
     // MARK: - View
@@ -45,6 +49,9 @@ final class ComplateOrderButtonView: UIView {
         return view
     }()
     
+    // MARK: - Internal Method
+    weak var delegate: ComplateOrderButtonViewDelegate?
+    
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,6 +81,6 @@ final class ComplateOrderButtonView: UIView {
     }
     
     @objc private func tappedComplateOrderButton() {
-        
+        delegate?.tappedComplateOrderButton()
     }
 }

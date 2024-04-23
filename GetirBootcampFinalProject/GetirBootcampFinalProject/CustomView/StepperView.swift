@@ -7,12 +7,6 @@
 
 import UIKit
 
-enum SectionStepperView {
-    case productList
-    case productDetail
-    case shoppingCard
-}
-
 protocol StepperViewDelegate: AnyObject {
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int)
     func didTappedDowngradeButton(productItem: ProductItem, productCount: Int)

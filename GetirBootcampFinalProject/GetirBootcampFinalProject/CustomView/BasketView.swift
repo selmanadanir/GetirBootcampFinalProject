@@ -51,6 +51,20 @@ final class BasketView: UIView {
         return view
     }()
     
+    private lazy var labelStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [firstLabel, secondLabel, thirdLabel])
+        view.axis = .vertical
+        view.distribution = .fillEqually
+        view.spacing = 0
+        return view
+    }()
+    
+    private lazy var bottomLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = AppColor.getColor(.background)
+        return view
+    }()
+    
     // MARK: - Internal Method
     var productModel: ProductItem? {
         didSet {
@@ -77,30 +91,18 @@ final class BasketView: UIView {
     
     // MARK: Private Methods
     private func setupView() {
-        backgroundColor = AppColor.getColor(.white)
+        
         addSubview(imageView)
-        addSubview(firstLabel)
-        addSubview(secondLabel)
-        addSubview(thirdLabel)
+        addSubview(labelStackView)
         
         imageView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.height.width.equalTo(100)
         }
         
-        firstLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom)
+        labelStackView.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(4)
             make.leading.trailing.equalToSuperview()
-        }
-        
-        secondLabel.snp.makeConstraints { make in
-            make.top.equalTo(firstLabel.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        thirdLabel.snp.makeConstraints { make in
-            make.top.equalTo(secondLabel.snp.bottom)
-            make.leading.bottom.trailing.equalToSuperview()
         }
     }
     
@@ -134,6 +136,7 @@ final class BasketView: UIView {
     // MARK: - Internal Method
     func updateViewForProductDetailScreen() {
         imageView.layer.borderWidth = 0
+        imageView.layer.cornerRadius = 0
         firstLabel.font = .font(.openSans, .bold, size: 20)
         firstLabel.textAlignment = .center
         
@@ -143,8 +146,40 @@ final class BasketView: UIView {
         thirdLabel.font = .font(.openSans, .semiBold, size: 12)
         thirdLabel.textAlignment = .center
         
-        imageView.snp.makeConstraints { make in
+        imageView.snp.updateConstraints { make in
             make.height.width.equalTo(200)
+        }
+        
+        addSubview(bottomLine)
+        
+        bottomLine.snp.makeConstraints { make in
+            make.top.equalTo(labelStackView.snp.bottom)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(2)
+        }
+    }
+    
+    func updateViewForShoppingCardScreen() {
+        labelStackView.arrangedSubviews[2].removeFromSuperview()
+        labelStackView.arrangedSubviews[1].removeFromSuperview()
+        labelStackView.arrangedSubviews[0].removeFromSuperview()
+        
+        addSubview(imageView)
+        addSubview(labelStackView)
+        
+        labelStackView.addArrangedSubview(secondLabel)
+        labelStackView.addArrangedSubview(thirdLabel)
+        labelStackView.addArrangedSubview(firstLabel)
+        
+        imageView.snp.makeConstraints { make in
+            make.top.leading.bottom.equalToSuperview()
+            make.height.width.equalTo(75)
+        }
+        
+        labelStackView.snp.makeConstraints { make in
+            make.leading.equalTo(imageView.snp.trailing)
+            make.top.equalTo(imageView.snp.top)
         }
     }
 }

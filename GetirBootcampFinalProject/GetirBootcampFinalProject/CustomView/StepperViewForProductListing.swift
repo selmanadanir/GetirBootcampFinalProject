@@ -104,6 +104,22 @@ final class StepperViewForProductListing: UIView {
         }
     }
     
+    private func updateSetupForUpgradeView() {
+        stackView.snp.updateConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(30)
+            make.height.equalTo(90)
+        }
+    }
+    
+    private func updateSetupForDowngradeView() {
+        stackView.snp.updateConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(30)
+            make.height.equalTo(30)
+        }
+    }
+    
     @objc private func didTappedUpgradeButton() {
         
         guard let productItem else { return }
@@ -134,21 +150,5 @@ final class StepperViewForProductListing: UIView {
         }
         label.text = String(productCount)
         
-    }
-    
-    private func updateSetupForUpgradeView() {
-        stackView.snp.updateConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalTo(30)
-            make.height.equalTo(90)
-        }
-    }
-    
-    private func updateSetupForDowngradeView() {
-        stackView.snp.updateConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalTo(30)
-            make.height.equalTo(30)
-        }
     }
 }

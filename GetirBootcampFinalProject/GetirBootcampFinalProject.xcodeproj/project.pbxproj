@@ -63,6 +63,7 @@
 		B3F8E6792BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66D2BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf */; };
 		B3F8E67A2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66E2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf */; };
 		B3F8E67B2BCA914E00EFB96B /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F8E66F2BCA914E00EFB96B /* OpenSans-Regular.ttf */; };
+		B3F9BFB82BD7BDDB003979CE /* ShoppingCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9BFB72BD7BDDB003979CE /* ShoppingCardCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		B3F8E66D2BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		B3F8E66E2BCA914E00EFB96B /* OpenSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		B3F8E66F2BCA914E00EFB96B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		B3F9BFB72BD7BDDB003979CE /* ShoppingCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCardCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		B33E7B502BD6A51B003ACD1A /* ShoppingCardScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B3F9BFB62BD7BD9F003979CE /* Cell */,
 				B33E7B512BD6A60B003ACD1A /* ShoppingCardViewController.swift */,
 				B3235E4E2BD6A68E00863FFF /* ShoppingCardPresenter.swift */,
 				B3235E502BD6A69F00863FFF /* ShoppingCardInteractor.swift */,
@@ -283,12 +286,12 @@
 		B3B48CEF2BC7AA6100A555A4 /* ProductListingScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B3C484CB2BCD7953001B4AD5 /* Cell */,
 				B347FEB32BC6EFF600CCDF3A /* ProductsListingViewController.swift */,
 				B3B48D082BC820D800A555A4 /* ProductsListingPresenter.swift */,
 				B3B48D062BC818BF00A555A4 /* ProductsListingInteractor.swift */,
 				B3B48D042BC816F400A555A4 /* ProductsRouter.swift */,
 				B3B48D022BC815F100A555A4 /* ProductsEntity.swift */,
-				B3C484CB2BCD7953001B4AD5 /* Cell */,
 			);
 			path = ProductListingScreen;
 			sourceTree = "<group>";
@@ -323,8 +326,8 @@
 		B3B48CFD2BC7E18900A555A4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */,
 				B3B48D002BC7E1C600A555A4 /* NetworkHelper.swift */,
+				B3B48CFE2BC7E1B400A555A4 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -415,6 +418,14 @@
 				B3F8E66D2BCA914E00EFB96B /* OpenSans-SemiBoldItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B3F9BFB62BD7BD9F003979CE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3F9BFB72BD7BDDB003979CE /* ShoppingCardCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,6 +609,7 @@
 				B3EDF98D2BD297F000B7BA86 /* Double+Extension.swift in Sources */,
 				B3235E552BD6B93800863FFF /* Label+Extension.swift in Sources */,
 				B3B48CFC2BC7D16100A555A4 /* AppSize.swift in Sources */,
+				B3F9BFB82BD7BDDB003979CE /* ShoppingCardCollectionViewCell.swift in Sources */,
 				B3F8E5E02BC9C98700EFB96B /* Font+Extension.swift in Sources */,
 				B347FEB22BC6EFF600CCDF3A /* SceneDelegate.swift in Sources */,
 				B3B48D052BC816F400A555A4 /* ProductsRouter.swift in Sources */,

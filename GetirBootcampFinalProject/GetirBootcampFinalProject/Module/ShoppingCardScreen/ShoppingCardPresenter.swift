@@ -25,6 +25,7 @@ extension ShoppingCardPresenter: ShoppingCardPresenterProtocol {
         view.showDetailScreen()
         view.setLeftBarButton()
         view.setRightBarButton()
+        view.configureCollectionView()
     }
 }
 

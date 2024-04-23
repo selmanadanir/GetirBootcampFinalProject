@@ -26,10 +26,6 @@ final class DetailViewController: UIViewController {
     
     private lazy var basketView: BasketView = {
         let view = BasketView()
-        view.shadowRadius = 3
-        view.shadowColor = AppColor.getColor(.head)
-        view.shadowOffset = .zero
-        view.shadowOpacity = 0.2
         view.updateViewForProductDetailScreen()
         return view
     }()

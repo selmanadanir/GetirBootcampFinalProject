@@ -12,13 +12,29 @@ protocol ShoppingCardViewControllerProtocol: AnyObject {
     func showDetailScreen()
     func setLeftBarButton()
     func setRightBarButton()
+    func configureCollectionView()
 }
 
 final class ShoppingCardViewController: UIViewController {
-
+    
     // MARK: - View
-    private lazy var contentView: ComplateOrderButtonView = {
+    private lazy var collectionView: UICollectionView = {
+        let view = UICollectionView()
+        return view
+    }()
+    
+    private lazy var complateOrderButton: ComplateOrderButtonView = {
         let view = ComplateOrderButtonView()
+        view.delegate = self
+        return view
+    }()
+    
+    private lazy var complateOrderMessage: UILabel = {
+        let view = UILabel()
+        view.font = .font(.openSans, .semiBold, size: 24)
+        view.textColor = AppColor.getColor(.primary)
+        view.text = "Siparişiniz Alınmıştır."
+        view.isHidden = true
         return view
     }()
     
@@ -31,14 +47,20 @@ final class ShoppingCardViewController: UIViewController {
         presenter.viewDidLoad()
         view.backgroundColor = .white
         setupView()
+        collectionView.dataSource = self
     }
     
     // MARK: - Private Method
     private func setupView() {
-        view.addSubview(contentView)
+        view.addSubview(complateOrderButton)
+        view.addSubview(complateOrderMessage)
         
-        contentView.snp.makeConstraints { make in
+        complateOrderButton.snp.makeConstraints { make in
             make.leading.bottom.trailing.equalToSuperview()
+        }
+        
+        complateOrderMessage.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
         }
     }
     
@@ -78,11 +100,86 @@ extension ShoppingCardViewController: ShoppingCardViewControllerProtocol {
         self.navigationController?.navigationBar.tintColor = AppColor.getColor(.white)
         navigationItem.rightBarButtonItem = rightBarButton
     }
+    
+    func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: LayoutManger.generateShoppingCardCollectionLayout())
+        view.addSubview(collectionView)
+        collectionView.register(ShoppingCardCollectionViewCell.self, forCellWithReuseIdentifier: "BasketDirection.horizontal.name")
+        collectionView.register(ProductListCollectionViewCell.self, forCellWithReuseIdentifier: BasketDirection.vertical.name)
+        
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = AppColor.getColor(.white)
+    }
 }
 
-// MARK: - BasketAmountViewDelegate
-extension ShoppingCardViewController: BasketAmountViewDelegate {
-    func clickBasketAmountButton() {
-        print("clickBasketAmountButton")
+// MARK: - UICollectionViewDataSource
+extension ShoppingCardViewController: UICollectionViewDataSource {
+    // MARK: - NumberOfSections
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return BasketDirection.allCases.count
+    }
+    
+    // MARK: NumberOfItems
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let sectionKind = BasketDirection(rawValue: section) else { fatalError() }
+        switch sectionKind {
+        case .horizontal:
+            return 3
+        case .vertical:
+            return 4
+        }
+    }
+    
+    // MARK: - CellForItemAt
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let sectionKind = BasketDirection(rawValue: indexPath.section) else { fatalError() }
+        
+        switch sectionKind {
+        case .horizontal:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketDirection.horizontal.name", for: indexPath) as! ShoppingCardCollectionViewCell
+            
+            
+            let model = SuggestedProductItem(id: "6540f93a48e4bd7bf4940ffd",
+                                             imageURL: "https://market-product-images-cdn.getirapi.com/product/dee83b80-7f9a-4aea-b799-e3316b5696f1.jpg",
+                                             price: 140.75,
+                                             name: "Master Nut NR1 Mixed Nuts",
+                                             priceText: "₺140,75",
+                                             shortDescription: "140 g",
+                                             category: nil,
+                                             unitPrice: nil,
+                                             squareThumbnailURL: nil,
+                                             status: nil)
+            
+            cell.suggestedProductModel = model
+            
+            return cell
+            
+        case .vertical:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.vertical.name, for: indexPath) as! ProductListCollectionViewCell
+            
+            
+            let model = ProductItem(id: "6540f93a48e4bd7bf4940ffd",
+                                    name: "Kızılay Erzincan & Misket Limonu ve Nane Aromalı İçecek İkilisi",
+                                    attribute: "2 Products",
+                                    thumbnailURL: "https://market-product-images-cdn.getirapi.com/product/62a59d8a-4dc4-4b4d-8435-643b1167f636.jpg",
+                                    imageURL: "https://market-product-images-cdn.getirapi.com/product/62a59d8a-4dc4-4b4d-8435-643b1167f636.jpg",
+                                    price: 65.3,
+                                    priceText: "₺65,30",
+                                    shortDescription: "")
+            cell.productModel = model
+            
+            
+            return cell
+        }
+    }
+}
+
+// MARK: - ComplateOrderButtonViewDelegate
+extension ShoppingCardViewController: ComplateOrderButtonViewDelegate {
+    func tappedComplateOrderButton() {
+        collectionView.isHidden = true
+        complateOrderButton.isHidden = true
+        complateOrderMessage.isHidden = false
     }
 }
