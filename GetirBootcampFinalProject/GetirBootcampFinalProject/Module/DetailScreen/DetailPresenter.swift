@@ -5,14 +5,15 @@
 //  Created by Selman Adanir on 19.04.2024.
 //
 
-import Foundation
+import UIKit
 
 protocol DetailPresenterProtocol: AnyObject {
     func viewDidLoad()
     func getProductItem() -> ProductItem?
-    func upgradeChosenProducs(productItem: ProductItem)
-    func downgradeChosenProducs(productItem: ProductItem)
+    func upgradeChosenProducCount()
+    func downgradeChosenProducCount()
     func getBasketAmount() -> Double
+    func getChosenProductItemCount() -> Int
     func showShoppingCardScreen()
 }
 
@@ -23,8 +24,7 @@ final class DetailPresenter {
     var router: DetailRouterProtocol!
     
     var productItem: ProductItem?
-    private var basketAmount: Double = 0
-    private var chosenProducts: [ProductItem: Int] = [:]
+    private var productCount: Int = 0
 }
 
 // MARK: - DetailPresentProtocol
@@ -40,32 +40,28 @@ extension DetailPresenter: DetailPresenterProtocol {
         productItem
     }
     
-    func upgradeChosenProducs(productItem: ProductItem) {
-        
-        if chosenProducts.keys.contains(productItem) {
-            if chosenProducts[productItem]! < 5 {
-                chosenProducts[productItem]! += 1
-            }
-        } else {
-            chosenProducts[productItem] = 1
+    func upgradeChosenProducCount() {
+        if productCount < 5 {
+            productCount += 1
         }
     }
+
     
-    func downgradeChosenProducs(productItem: ProductItem) {
-        
-        if chosenProducts.keys.contains(productItem) {
-            if chosenProducts[productItem]! > 1 {
-                chosenProducts[productItem]! -= 1
-            }
+    func downgradeChosenProducCount() {
+        if productCount > 1 {
+            productCount -= 1
+        } else if productCount == 1 {
+            productCount = 0
+            router.navigateToShoppingCardScreen(.productsList)
         }
     }
     
     func getBasketAmount() -> Double {
-        basketAmount = 0
-        for (item, count) in chosenProducts {
-            basketAmount += item.price * Double(count)
-        }
-        return basketAmount
+        return (productItem?.price ?? 0) * Double(productCount)
+    }
+    
+    func getChosenProductItemCount() -> Int {
+        productCount
     }
     
     func showShoppingCardScreen() {

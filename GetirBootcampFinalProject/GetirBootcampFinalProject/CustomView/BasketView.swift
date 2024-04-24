@@ -110,7 +110,8 @@ final class BasketView: UIView {
     private func feedSuggestedProductView(by suggestedProductModel: SuggestedProductItem?) {
         guard let suggestedProductModel else { return }
         firstLabel.text = suggestedProductModel.priceText
-        secondLabel.text = String(suggestedProductModel.name.prefix(15))
+        guard let name = suggestedProductModel.name else { return }
+        secondLabel.text = String(name.prefix(15))
         thirdLabel.text = suggestedProductModel.priceText
         var newImageUrl = suggestedProductModel.imageURL == nil ? suggestedProductModel.squareThumbnailURL : suggestedProductModel.imageURL
         if newImageUrl?.prefix(5) != "https" {
@@ -123,13 +124,14 @@ final class BasketView: UIView {
     private func feedProductView(by productModel: ProductItem?) {
         guard let productModel else { return }
         firstLabel.text = productModel.priceText
-        secondLabel.text = String(productModel.name.prefix(15))
+        guard let name = productModel.name else { return }
+        secondLabel.text = String(name.prefix(15))
         thirdLabel.text = productModel.attribute
         var newImageUrl = productModel.imageURL
-        if newImageUrl.prefix(5) != "https" {
-            newImageUrl.insert("s", at: 4)
+        if newImageUrl?.prefix(5) != "https" {
+            newImageUrl?.insert("s", at: 4)
         }
-        guard let url = URL(string: newImageUrl) else { return }
+        guard let url = URL(string: newImageUrl ?? "") else { return }
         imageView.kf.setImage(with: url)
     }
     

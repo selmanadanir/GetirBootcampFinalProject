@@ -9,6 +9,7 @@ import Foundation
 
 enum DetailRouterRoutes {
     case detailView
+    case productsList
 }
 
 protocol DetailRouterProtocol: AnyObject {
@@ -46,6 +47,9 @@ extension DetailRouter: DetailRouterProtocol {
         case .detailView:
             let shoppingCardViewController = ShoppingCardRouter.createModule()
             viewController?.navigationController?.pushViewController(shoppingCardViewController, animated: true)
+        case .productsList:
+            let productsListViewController = ProductsListingRouter.createModule()
+            viewController?.navigationController?.pushViewController(productsListViewController, animated: true)
         }
     }
 }

@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 protocol ShoppingCardPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func getProductsFirebase(index: Int) -> ProductItem?
+    func getProductsCount() -> Int
 }
 
 final class ShoppingCardPresenter {
@@ -16,20 +19,53 @@ final class ShoppingCardPresenter {
     weak var view: ShoppingCardViewControllerProtocol!
     var interactor: ShoppingCardInteractorProtocol!
     var router: ShoppingCardRouterProtocol!
+    
+    private var products: [ProductModel]?
+    private var firebaseProducts = [DataSnapshot]()
 }
 
 // MARK: - ShoppingCardPresenterProtocol
 extension ShoppingCardPresenter: ShoppingCardPresenterProtocol {
+    
     func viewDidLoad() {
         view.setTitle()
         view.showDetailScreen()
         view.setLeftBarButton()
         view.setRightBarButton()
         view.configureCollectionView()
+        interactor.fetchProducts()
+        interactor.fetchDataToFirebase()
+    }
+    
+    func getProductsFirebase(index: Int) -> ProductItem? {
+        let model = products?.first?.products
+        let key = firebaseProducts[index].key
+        
+        let result = model?.filter({ item in
+            item.id == key
+        })
+        
+        return result?.first
+    }
+    
+    func getProductsCount() -> Int {
+        firebaseProducts.count
     }
 }
 
 // MARK: - ShoppingCardInteractorOutputProtocol
 extension ShoppingCardPresenter: ShoppingCardInteractorOutputProtocol {
+    func onSuccesProducts(products: [ProductModel]) {
+        self.products = products
+        view.reloadData()
+    }
     
+    func onFailureProducts(error: ErrorTypes) {
+        view.showError()
+    }
+    
+    func onSuccesFirebase(products: DataSnapshot) {
+        firebaseProducts.append(products)
+        view.reloadData()
+    }
 }

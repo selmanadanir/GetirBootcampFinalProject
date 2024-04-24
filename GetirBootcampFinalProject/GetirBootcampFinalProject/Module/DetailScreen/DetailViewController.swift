@@ -15,7 +15,7 @@ protocol DetailViewControllerProtocol: AnyObject {
     func popViewController()
 }
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseViewController {
 
     // MARK: - View
     private lazy var basketAmountView: BasketAmountView = {
@@ -98,21 +98,30 @@ extension DetailViewController: DetailViewControllerProtocol {
 
 extension DetailViewController: BottomBasketButtonViewDelegate {
     
-    func addToBasketButton() {
+    func didTappedAddToBasketButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: basketAmountView)
-        guard let productItem = presenter.getProductItem() else { return }
-        presenter.upgradeChosenProducs(productItem: productItem)
+        presenter.upgradeChosenProducCount()
         basketAmountView.amount = presenter.getBasketAmount()
+        guard let model = presenter.getProductItem() else { return }
+        addNewEntryInFirebase(productId: model.id ?? "", count: presenter.getChosenProductItemCount())
     }
     
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int) {
-        presenter.upgradeChosenProducs(productItem: productItem)
+        presenter.upgradeChosenProducCount()
         basketAmountView.amount = presenter.getBasketAmount()
+        guard let model = presenter.getProductItem() else { return }
+        addNewEntryInFirebase(productId: model.id ?? "", count: presenter.getChosenProductItemCount())
     }
     
     func didTappedDowngradeButton(productItem: ProductItem, productCount: Int) {
-        presenter.downgradeChosenProducs(productItem: productItem)
+        presenter.downgradeChosenProducCount()
         basketAmountView.amount = presenter.getBasketAmount()
+        guard let model = presenter.getProductItem() else { return }
+        if presenter.getChosenProductItemCount() == 0 {
+            removeData(id: model.id ?? "")
+        } else {
+            addNewEntryInFirebase(productId: model.id ?? "", count: presenter.getChosenProductItemCount())
+        }
     }
 }
 

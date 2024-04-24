@@ -66,7 +66,7 @@ final class StepperViewForProductListing: UIView {
     }()
     
     // MARK: - Private Variable
-    private var productCount: Int = 1
+    private var productCount: Int = 0
     
     // MARK: - Internal Variable
     weak var delegate: StepperViewForProductListingProtocol?
@@ -126,11 +126,14 @@ final class StepperViewForProductListing: UIView {
         delegate?.didTappedUpgradeButton(productItem: productItem, productCount: productCount)
         label.isHidden = false
         downgradeButton.isHidden = false
-        label.text = String(productCount)
         updateSetupForUpgradeView()
         if productCount < 5 {
             productCount += 1
         }
+        if productCount > 1 {
+            downgradeButton.setImage(AppIcon.getIcon(.minus), for: .normal)
+        }
+        label.text = String(productCount)
         upgradeButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
     }
@@ -141,12 +144,15 @@ final class StepperViewForProductListing: UIView {
         delegate?.didTappedDowngradeButton(productItem: productItem, productCount: productCount)
         if productCount > 1 {
             productCount -= 1
-        }
-        if productCount == 1 {
+        } else if productCount == 1 {
+            productCount = 0
             label.isHidden = true
             downgradeButton.isHidden = true
             updateSetupForDowngradeView()
             upgradeButton.layer.maskedCorners = [.layerMinXMinYCorner ,.layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        }
+        if productCount == 1 {
+            downgradeButton.setImage(AppIcon.getIcon(.trash), for: .normal)
         }
         label.text = String(productCount)
         

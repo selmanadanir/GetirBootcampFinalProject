@@ -16,7 +16,7 @@ protocol ProductsListingViewControllerProtocol: AnyObject {
     func configureCollectionView()
 }
 
-final class ProductsListingViewController: UIViewController {
+final class ProductsListingViewController: BaseViewController {
     
     // MARK: - View
     private lazy var collectionView: UICollectionView = {
@@ -142,15 +142,19 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int) {
         presenter.upgradeChosenProducs(productItem: productItem)
         basketAmountView.amount = presenter.getBasketAmount()
-        
+        addNewEntryInFirebase(productId: productItem.id ?? "", 
+                              count: presenter.getChosenProductItemCount(productItem: productItem))
         /// TODO show alert, maximum 5 products can be selected
-        /// TODO  write new count of product to firebase
     }
     
     func didTappedDowngradeButton(productItem: ProductItem, productCount: Int) {
         presenter.downgradeChosenProducs(productItem: productItem)
         basketAmountView.amount = presenter.getBasketAmount()
-        
+        if presenter.getChosenProductItemCount(productItem: productItem) == 0 {
+            removeData(id: productItem.id ?? "")
+        } else {
+            addNewEntryInFirebase(productId: productItem.id ?? "", count: presenter.getChosenProductItemCount(productItem: productItem))
+        }
         /// TODO  write new count of product to firebase
     }
 }
@@ -158,6 +162,6 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
 // MARK: - BasketAmountViewDelegate
 extension ProductsListingViewController: BasketAmountViewDelegate {
     func clickBasketAmountButton() {
-        print("clickBasketAmountButton")
+        presenter.showShoppingCardScreen()
     }
 }

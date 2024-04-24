@@ -10,6 +10,8 @@ import UIKit
 protocol ShoppingCardViewControllerProtocol: AnyObject {
     func setTitle()
     func showDetailScreen()
+    func reloadData()
+    func showError()
     func setLeftBarButton()
     func setRightBarButton()
     func configureCollectionView()
@@ -65,7 +67,8 @@ final class ShoppingCardViewController: UIViewController {
     }
     
     @objc private func tappedLeftBarButton(){
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        print(presenter.getProductsFirebase(index: 0))
     }
     
     @objc private func tappeRigtBarButton(){
@@ -75,12 +78,23 @@ final class ShoppingCardViewController: UIViewController {
 
 // MARK: - ShoppingCardViewControllerProtocol
 extension ShoppingCardViewController: ShoppingCardViewControllerProtocol {
+    
     func setTitle() {
         title = AppText.getText(.shoppingCardTitle)
     }
     
     func showDetailScreen() {
         print("ShoppingCardViewController")
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func showError() {
+        print("Beklenmeyen bir hata oluştu.")
     }
     
     func setLeftBarButton() {
@@ -126,7 +140,7 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
         case .horizontal:
             return 3
         case .vertical:
-            return 4
+            return presenter.getProductsCount()
         }
     }
     
@@ -140,18 +154,15 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketDirection.horizontal.name", for: indexPath) as! ShoppingCardCollectionViewCell
             
             
-            let model = SuggestedProductItem(id: "6540f93a48e4bd7bf4940ffd",
-                                             imageURL: "https://market-product-images-cdn.getirapi.com/product/dee83b80-7f9a-4aea-b799-e3316b5696f1.jpg",
-                                             price: 140.75,
-                                             name: "Master Nut NR1 Mixed Nuts",
-                                             priceText: "₺140,75",
-                                             shortDescription: "140 g",
-                                             category: nil,
-                                             unitPrice: nil,
-                                             squareThumbnailURL: nil,
-                                             status: nil)
-            
-            cell.suggestedProductModel = model
+            let model = ProductItem(id: "6540f93a48e4bd7bf4940ffd",
+                                    name: "Kızılay Erzincan & Misket Limonu ve Nane Aromalı İçecek İkilisi",
+                                    attribute: "2 Products",
+                                    thumbnailURL: "https://market-product-images-cdn.getirapi.com/product/62a59d8a-4dc4-4b4d-8435-643b1167f636.jpg",
+                                    imageURL: "https://market-product-images-cdn.getirapi.com/product/62a59d8a-4dc4-4b4d-8435-643b1167f636.jpg",
+                                    price: 65.3,
+                                    priceText: "₺65,30",
+                                    shortDescription: "")
+            cell.productModel = model
             
             return cell
             
@@ -167,8 +178,10 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
                                     price: 65.3,
                                     priceText: "₺65,30",
                                     shortDescription: "")
-            cell.productModel = model
+//            cell.productModel = model
             
+            guard let test = presenter.getProductsFirebase(index: indexPath.row) else { return UICollectionViewCell() }
+            cell.productModel = test
             
             return cell
         }

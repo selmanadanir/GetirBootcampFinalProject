@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 protocol ProductsListingInteractorProtocol {
     func fetchProducts()
     func fetchSuggestedProduct()
+    func fetchDataToFirebase()
 }
 
 protocol ProductsListingOutputProtocol: AnyObject {
@@ -17,10 +19,12 @@ protocol ProductsListingOutputProtocol: AnyObject {
     func onFailureProducts(error: ErrorTypes)
     func onSuccesSuggested(suggestedProducts: [SuggestedProductModel])
     func onFailureSuggested(error: ErrorTypes)
+    func onSuccesFirebase(data: DataSnapshot)
 }
 
 final class ProductsListingInteractor {
     var output: ProductsListingOutputProtocol?
+    let database = Database.database().reference()
 }
 
 // MARK: - ProductsListingInteractorProtocol
@@ -44,6 +48,15 @@ extension ProductsListingInteractor: ProductsListingInteractorProtocol {
                 self.output?.onSuccesSuggested(suggestedProducts: success)
             case .failure(let error):
                 self.output?.onFailureSuggested(error: error)
+            }
+        }
+    }
+    
+    func fetchDataToFirebase() {
+        database.child("products").observeSingleEvent(of: .value) { snapshot in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                self.output?.onSuccesFirebase(data: rest)
             }
         }
     }

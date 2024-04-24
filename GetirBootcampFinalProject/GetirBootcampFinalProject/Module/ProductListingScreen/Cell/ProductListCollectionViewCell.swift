@@ -64,8 +64,8 @@ final class ProductListCollectionViewCell: UICollectionViewCell {
         }
         
         stepperView.snp.makeConstraints { make in
-            make.top.equalTo(basketView.snp.top).offset(-5)
-            make.trailing.equalTo(basketView.snp.trailing).offset(10)
+            make.top.equalTo(basketView.snp.top).offset(-4)
+            make.trailing.equalTo(basketView.snp.trailing).offset(8)
         }
     }
 }

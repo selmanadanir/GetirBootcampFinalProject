@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BottomBasketButtonViewDelegate: AnyObject {
-    func addToBasketButton()
+    func didTappedAddToBasketButton()
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int)
     func didTappedDowngradeButton(productItem: ProductItem, productCount: Int)
 }
@@ -92,7 +92,7 @@ final class BottomBasketButtonView: UIView {
     }
     
     @objc private func tappedAddBasketButton() {
-        delegate?.addToBasketButton()
+        delegate?.didTappedAddToBasketButton()
         addToBasketButton.isHidden.toggle()
         stepperView.isHidden.toggle()
     }

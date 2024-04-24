@@ -13,6 +13,7 @@ enum ProductsListingRoutes {
 
 protocol ProductsRouterProtocol: AnyObject {
     func navigateToDetailsScreen(productItem: ProductItem, _ route: ProductsListingRoutes)
+    func navigateToShoppingScreen()
 }
 
 final class ProductsListingRouter {
@@ -45,5 +46,10 @@ extension ProductsListingRouter: ProductsRouterProtocol {
             let detailViewController = DetailRouter.createModule(productItem: productItem)
             viewController?.navigationController?.pushViewController(detailViewController, animated: true)
         }
+    }
+    
+    func navigateToShoppingScreen() {
+        let shoppingCardViewController = ShoppingCardRouter.createModule()
+        viewController?.navigationController?.pushViewController(shoppingCardViewController, animated: true)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 protocol ProductsListingPresenterProtocol: AnyObject {
     func viewDidLoad()
@@ -18,8 +19,10 @@ protocol ProductsListingPresenterProtocol: AnyObject {
     func upgradeChosenProducs(productItem: ProductItem)
     func downgradeChosenProducs(productItem: ProductItem)
     func getChosenProductItem() -> [ProductItem: Int]
+    func getChosenProductItemCount(productItem: ProductItem) -> Int
     func getBasketAmount() -> Double
     func showDetailScreen(productItem: ProductItem)
+    func showShoppingCardScreen()
 }
 
 final class ProductsListingPresenter {
@@ -32,6 +35,8 @@ final class ProductsListingPresenter {
     private var suggestedProducts: [SuggestedProductModel]?
     private var chosenProducts: [ProductItem: Int] = [:]
     private var basketAmount: Double = 0
+    private var data: DataSnapshot?
+    let database = Database.database().reference()
 }
 
 extension ProductsListingPresenter: ProductsListingPresenterProtocol {
@@ -42,6 +47,7 @@ extension ProductsListingPresenter: ProductsListingPresenterProtocol {
         view.configureCollectionView()
         interactor.fetchProducts()
         interactor.fetchSuggestedProduct()
+        interactor.fetchDataToFirebase()
     }
     
     func getSuggestedProduct(index: Int) -> SuggestedProductItem? {
@@ -82,7 +88,7 @@ extension ProductsListingPresenter: ProductsListingPresenterProtocol {
     func downgradeChosenProducs(productItem: ProductItem) {
         
         if chosenProducts.keys.contains(productItem) {
-            if chosenProducts[productItem]! > 0 {
+            if chosenProducts[productItem]! >= 1 {
                 chosenProducts[productItem]! -= 1
             }
         }
@@ -92,16 +98,24 @@ extension ProductsListingPresenter: ProductsListingPresenterProtocol {
         chosenProducts
     }
     
+    func getChosenProductItemCount(productItem: ProductItem) -> Int {
+        chosenProducts[productItem] ?? 0
+    }
+    
     func getBasketAmount() -> Double {
         basketAmount = 0
         for (item, count) in chosenProducts {
-            basketAmount += item.price * Double(count)
+            basketAmount += (item.price ?? 0) * Double(count)
         }
         return basketAmount
     }
     
     func showDetailScreen(productItem: ProductItem) {
         router.navigateToDetailsScreen(productItem: productItem, .detailView)
+    }
+    
+    func showShoppingCardScreen() {
+        router.navigateToShoppingScreen()
     }
 }
 
@@ -124,5 +138,9 @@ extension ProductsListingPresenter: ProductsListingOutputProtocol {
     
     func onFailureSuggested(error: ErrorTypes) {
         view.showError(error: error)
+    }
+    
+    func onSuccesFirebase(data: DataSnapshot) {
+        self.data = data
     }
 }
