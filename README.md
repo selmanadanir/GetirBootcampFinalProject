@@ -7,6 +7,8 @@ Bootcamp final project organized in cooperation with Getir and Patika.dev
 ## Used Technologies
 
 - Swift UIKit
+- Compositional Layout
+- Programmatically View
 - Firebase Realtime (CRUD Operation)
 - Firebase App Event
 - Modular Approach
@@ -15,6 +17,12 @@ Bootcamp final project organized in cooperation with Getir and Patika.dev
 ## Architectural
 
 - Viper
+
+## Design Pattern
+
+- Delegate
+- Singleton
+- POP - OOP
 
 ## Network Layer
 
@@ -26,6 +34,9 @@ Bootcamp final project organized in cooperation with Getir and Patika.dev
 - SnapKit
 - Firebase
 
+## API
+
+- Mock API
 
   
 ## License
