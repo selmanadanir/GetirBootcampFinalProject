@@ -121,6 +121,7 @@ extension ProductsListingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let sectionKind = BasketDirection(rawValue: indexPath.section) else { fatalError() }
         guard let model = presenter.getProduct(index: indexPath.row) else { return }
+        AnalyticsManager.shared.logButtonTapEvent(buttonName: AnalyticsEvent.getText(.clickProductInProductListScreen) + (model.id ?? ""))
         presenter.showDetailScreen(productItem: model)
     }
 }
@@ -132,6 +133,7 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
         basketAmountView.amount = presenter.getBasketAmount()
         addNewEntryInFirebase(productId: productItem.id ?? "",
                               count: presenter.getChosenProductItemCount(productItem: productItem))
+        AnalyticsManager.shared.logButtonTapEvent(buttonName: AnalyticsEvent.getText(.clickUpgradeButton) + (productItem.id ?? ""))
     }
     
     func didTappedDowngradeButton(productItem: ProductItem, productCount: Int) {
@@ -143,6 +145,7 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
             addNewEntryInFirebase(productId: productItem.id ?? "",
                                   count: presenter.getChosenProductItemCount(productItem: productItem))
         }
+        AnalyticsManager.shared.logButtonTapEvent(buttonName: AnalyticsEvent.getText(.clickDowngradeButton) + (productItem.id ?? ""))
     }
 }
 
@@ -150,5 +153,6 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
 extension ProductsListingViewController: BasketAmountViewDelegate {
     func clickBasketAmountButton() {
         presenter.showShoppingCardScreen()
+        AnalyticsManager.shared.logButtonTapEvent(buttonName: AnalyticsEvent.getText(.clickBasketAmount))
     }
 }

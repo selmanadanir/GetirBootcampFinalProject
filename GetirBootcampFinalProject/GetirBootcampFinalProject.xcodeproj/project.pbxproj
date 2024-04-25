@@ -28,6 +28,8 @@
 		B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F76E52BCC5B7B009052A2 /* LayoutManger.swift */; };
 		B36079642BD0F6A100267F51 /* BasketAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36079632BD0F6A100267F51 /* BasketAmountView.swift */; };
 		B36079662BD0FF5C00267F51 /* AppText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36079652BD0FF5C00267F51 /* AppText.swift */; };
+		B36493092BDA2F5D0069BF3F /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36493062BDA2F5D0069BF3F /* AnalyticsEvent.swift */; };
+		B364930A2BDA2F5D0069BF3F /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36493072BDA2F5D0069BF3F /* AnalyticsManager.swift */; };
 		B3B084722BCF94D2000AD508 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B084712BCF94D2000AD508 /* AppIcon.swift */; };
 		B3B084742BCFD407000AD508 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B084732BCFD407000AD508 /* StepperView.swift */; };
 		B3B48CF52BC7BDBE00A555A4 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */; };
@@ -139,6 +141,8 @@
 		B35F76E52BCC5B7B009052A2 /* LayoutManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManger.swift; sourceTree = "<group>"; };
 		B36079632BD0F6A100267F51 /* BasketAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketAmountView.swift; sourceTree = "<group>"; };
 		B36079652BD0FF5C00267F51 /* AppText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppText.swift; sourceTree = "<group>"; };
+		B36493062BDA2F5D0069BF3F /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		B36493072BDA2F5D0069BF3F /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		B3B084712BCF94D2000AD508 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		B3B084732BCFD407000AD508 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
 		B3B48CF42BC7BDBE00A555A4 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 			children = (
 				B3B48CED2BC7AA2400A555A4 /* App */,
 				B3F8E6632BCA90E500EFB96B /* Fonts */,
+				B36493052BDA2F4F0069BF3F /* Manager */,
 				B3F8E5DE2BC9C95800EFB96B /* Extensions */,
 				B3B48CFD2BC7E18900A555A4 /* Network */,
 				B3B48CF22BC7BBD700A555A4 /* Common */,
@@ -314,6 +319,23 @@
 				B36079652BD0FF5C00267F51 /* AppText.swift */,
 			);
 			path = AppText;
+			sourceTree = "<group>";
+		};
+		B36493052BDA2F4F0069BF3F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B36493082BDA2F5D0069BF3F /* AppEvent */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B36493082BDA2F5D0069BF3F /* AppEvent */ = {
+			isa = PBXGroup;
+			children = (
+				B36493062BDA2F5D0069BF3F /* AnalyticsEvent.swift */,
+				B36493072BDA2F5D0069BF3F /* AnalyticsManager.swift */,
+			);
+			path = AppEvent;
 			sourceTree = "<group>";
 		};
 		B3B084702BCF94C6000AD508 /* AppIcon */ = {
@@ -713,6 +735,7 @@
 				B3235E572BD6B97800863FFF /* ComplateOrderButtonView.swift in Sources */,
 				B3F490512BD2BFB600CD9E16 /* DetailPresenter.swift in Sources */,
 				B3B084722BCF94D2000AD508 /* AppIcon.swift in Sources */,
+				B36493092BDA2F5D0069BF3F /* AnalyticsEvent.swift in Sources */,
 				B33E7B4F2BD68EC9003ACD1A /* StepperViewForProductListing.swift in Sources */,
 				B35F76E62BCC5B7B009052A2 /* LayoutManger.swift in Sources */,
 				B3B084742BCFD407000AD508 /* StepperView.swift in Sources */,
@@ -720,6 +743,7 @@
 				B3235E512BD6A69F00863FFF /* ShoppingCardInteractor.swift in Sources */,
 				B33E7B522BD6A60B003ACD1A /* ShoppingCardViewController.swift in Sources */,
 				B3F9BFF82BD91423003979CE /* BaseViewController.swift in Sources */,
+				B364930A2BDA2F5D0069BF3F /* AnalyticsManager.swift in Sources */,
 				B347FEB42BC6EFF600CCDF3A /* ProductsListingViewController.swift in Sources */,
 				B347FEB02BC6EFF600CCDF3A /* AppDelegate.swift in Sources */,
 				B36079642BD0F6A100267F51 /* BasketAmountView.swift in Sources */,
