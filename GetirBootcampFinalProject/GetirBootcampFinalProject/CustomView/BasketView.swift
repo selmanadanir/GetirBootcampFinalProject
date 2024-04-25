@@ -20,7 +20,6 @@ final class BasketView: UIView {
         view.layer.borderWidth = 2
         view.layer.borderColor = AppColor.getColor(.background)?.cgColor
         view.backgroundColor = AppColor.getColor(.white)
-        view.isSkeletonable = true
         return view
     }()
     
@@ -72,7 +71,6 @@ final class BasketView: UIView {
         }
     }
     
-    // Internal Methods
     var suggestedProductModel: SuggestedProductItem? {
         didSet {
             feedSuggestedProductView(by: suggestedProductModel)
@@ -83,6 +81,15 @@ final class BasketView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+    }
+    
+    convenience init(isForDetailScreen: Bool) {
+        self.init()
+        if isForDetailScreen {
+            updateViewForProductDetailScreen()
+        } else {
+            updateViewForShoppingCardScreen()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -135,8 +142,7 @@ final class BasketView: UIView {
         imageView.kf.setImage(with: url)
     }
     
-    // MARK: - Internal Method
-    func updateViewForProductDetailScreen() {
+    private func updateViewForProductDetailScreen() {
         imageView.layer.borderWidth = 0
         imageView.layer.cornerRadius = 0
         firstLabel.font = .font(.openSans, .bold, size: 20)
@@ -162,7 +168,7 @@ final class BasketView: UIView {
         }
     }
     
-    func updateViewForShoppingCardScreen() {
+    private func updateViewForShoppingCardScreen() {
         labelStackView.arrangedSubviews[2].removeFromSuperview()
         labelStackView.arrangedSubviews[1].removeFromSuperview()
         labelStackView.arrangedSubviews[0].removeFromSuperview()
@@ -183,5 +189,7 @@ final class BasketView: UIView {
             make.leading.equalTo(imageView.snp.trailing)
             make.top.equalTo(imageView.snp.top)
         }
+        
+        layoutIfNeeded()
     }
 }

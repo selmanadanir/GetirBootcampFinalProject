@@ -32,7 +32,7 @@ final class CoupleStrikethroughLabel: UIView {
         view.textColor = AppColor.getColor(.body)
         view.textAlignment = .center
         view.isEnabled = true
-        view.text = "₺2.000,00"
+        view.text = "₺200,00"
         view.strikeThrough(true)
         return view
     }()
@@ -58,6 +58,12 @@ final class CoupleStrikethroughLabel: UIView {
     // MARK: - Internal Method
     weak var delegate: CoupleStrikethroughLabelDelegate?
     
+    var amount: Int? {
+        didSet {
+            feed(by: amount ?? 0)
+        }
+    }
+    
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -81,6 +87,10 @@ final class CoupleStrikethroughLabel: UIView {
         stackView.snp.makeConstraints { make in
             make.edges.equalTo(contentView.snp.edges).inset(8)
         }
+    }
+    
+    private func feed(by amount: Int) {
+        feeLabel.text = String(amount)
     }
     
     private func setTapGesture() {

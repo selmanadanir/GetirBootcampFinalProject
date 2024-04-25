@@ -11,8 +11,7 @@ final class ShoppingCardCollectionViewCell: UICollectionViewCell {
     
     // MARK: - View
     private lazy var basketView: BasketView = {
-        let view = BasketView()
-        view.updateViewForShoppingCardScreen()
+        let view = BasketView(isForDetailScreen: false)
         return view
     }()
     

@@ -102,13 +102,13 @@ extension ProductsListingViewController: UICollectionViewDataSource {
         
         switch sectionKind {
         case .horizontal:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.horizontal.name, for: indexPath) as! ProductListCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.horizontal.name, for: indexPath) as? ProductListCollectionViewCell else { return UICollectionViewCell() }
             cell.suggestedProductModel = presenter.getSuggestedProduct(index: indexPath.row)
             cell.delegate = self
             return cell
             
         case .vertical:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.vertical.name, for: indexPath) as! ProductListCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.vertical.name, for: indexPath) as? ProductListCollectionViewCell else { return UICollectionViewCell() }
             cell.productModel = presenter.getProduct(index: indexPath.row)
             cell.delegate = self
             return cell
@@ -120,18 +120,6 @@ extension ProductsListingViewController: UICollectionViewDataSource {
 extension ProductsListingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let sectionKind = BasketDirection(rawValue: indexPath.section) else { fatalError() }
-        print(sectionKind)
-        switch sectionKind {
-        case .horizontal:
-//            basketAmount += presenter.calculateHorizontalBasketAmount(index: indexPath.row)
-//            basketAmountView.amount = basketAmount
-            print(presenter.calculateHorizontalBasketAmount(index: indexPath.row))
-        case .vertical:
-//            basketAmount += presenter.calculateVerticalBasketAmount(index: indexPath.row)
-//            basketAmountView.amount = basketAmount
-            print(presenter.calculateVerticalBasketAmount(index: indexPath.row))
-        }
-        
         guard let model = presenter.getProduct(index: indexPath.row) else { return }
         presenter.showDetailScreen(productItem: model)
     }
@@ -142,9 +130,8 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
     func didTappedUpgradeButton(productItem: ProductItem, productCount: Int) {
         presenter.upgradeChosenProducs(productItem: productItem)
         basketAmountView.amount = presenter.getBasketAmount()
-        addNewEntryInFirebase(productId: productItem.id ?? "", 
+        addNewEntryInFirebase(productId: productItem.id ?? "",
                               count: presenter.getChosenProductItemCount(productItem: productItem))
-        /// TODO show alert, maximum 5 products can be selected
     }
     
     func didTappedDowngradeButton(productItem: ProductItem, productCount: Int) {
@@ -153,9 +140,9 @@ extension ProductsListingViewController: ProductListCollectionViewCellDelegate {
         if presenter.getChosenProductItemCount(productItem: productItem) == 0 {
             removeData(id: productItem.id ?? "")
         } else {
-            addNewEntryInFirebase(productId: productItem.id ?? "", count: presenter.getChosenProductItemCount(productItem: productItem))
+            addNewEntryInFirebase(productId: productItem.id ?? "",
+                                  count: presenter.getChosenProductItemCount(productItem: productItem))
         }
-        /// TODO  write new count of product to firebase
     }
 }
 

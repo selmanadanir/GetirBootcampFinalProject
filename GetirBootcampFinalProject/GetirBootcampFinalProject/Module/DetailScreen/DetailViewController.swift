@@ -25,8 +25,7 @@ final class DetailViewController: BaseViewController {
     }()
     
     private lazy var basketView: BasketView = {
-        let view = BasketView()
-        view.updateViewForProductDetailScreen()
+        let view = BasketView(isForDetailScreen: true)
         return view
     }()
     

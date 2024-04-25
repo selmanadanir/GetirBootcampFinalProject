@@ -155,6 +155,5 @@ final class StepperViewForProductListing: UIView {
             downgradeButton.setImage(AppIcon.getIcon(.trash), for: .normal)
         }
         label.text = String(productCount)
-        
     }
 }

@@ -12,6 +12,7 @@ protocol ShoppingCardPresenterProtocol: AnyObject {
     func viewDidLoad()
     func getProductsFirebase(index: Int) -> ProductItem?
     func getProductsCount() -> Int
+    func getAmount() -> Double?
 }
 
 final class ShoppingCardPresenter {
@@ -50,6 +51,23 @@ extension ShoppingCardPresenter: ShoppingCardPresenterProtocol {
     
     func getProductsCount() -> Int {
         firebaseProducts.count
+    }
+    
+    func getAmount() -> Double? {
+        let model = products?.first?.products
+        var amount: Double = 0
+        
+        firebaseProducts.forEach { dataSnapshot in
+            guard let productCount = dataSnapshot.value as? Int else { return }
+            let key = dataSnapshot.key
+            
+            let result = model?.filter({ item in
+                item.id == key
+            })
+            guard let price = result?.first?.price else { return }
+            amount += price * Double(productCount)
+        }
+        return amount
     }
 }
 

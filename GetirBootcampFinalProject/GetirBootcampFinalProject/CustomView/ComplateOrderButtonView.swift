@@ -52,6 +52,12 @@ final class ComplateOrderButtonView: UIView {
     // MARK: - Internal Method
     weak var delegate: ComplateOrderButtonViewDelegate?
     
+    var amount: Int? {
+        didSet {
+            coupleStrikethroughLabel.amount = amount
+        }
+    }
+    
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)

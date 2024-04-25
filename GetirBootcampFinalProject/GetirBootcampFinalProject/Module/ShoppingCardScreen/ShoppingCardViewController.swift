@@ -17,7 +17,7 @@ protocol ShoppingCardViewControllerProtocol: AnyObject {
     func configureCollectionView()
 }
 
-final class ShoppingCardViewController: UIViewController {
+final class ShoppingCardViewController: BaseViewController {
     
     // MARK: - View
     private lazy var collectionView: UICollectionView = {
@@ -67,12 +67,12 @@ final class ShoppingCardViewController: UIViewController {
     }
     
     @objc private func tappedLeftBarButton(){
-//        navigationController?.popViewController(animated: true)
-        print(presenter.getProductsFirebase(index: 0))
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func tappeRigtBarButton(){
         navigationController?.popViewController(animated: true)
+        removeAllData()
     }
 }
 
@@ -140,7 +140,7 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
         case .horizontal:
             return 3
         case .vertical:
-            return presenter.getProductsCount()
+            return 3
         }
     }
     
@@ -151,7 +151,7 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
         
         switch sectionKind {
         case .horizontal:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketDirection.horizontal.name", for: indexPath) as! ShoppingCardCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketDirection.horizontal.name", for: indexPath) as? ShoppingCardCollectionViewCell else { return UICollectionViewCell() }
             
             
             let model = ProductItem(id: "6540f93a48e4bd7bf4940ffd",
@@ -167,7 +167,7 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
             return cell
             
         case .vertical:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.vertical.name, for: indexPath) as! ProductListCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketDirection.vertical.name, for: indexPath) as? ProductListCollectionViewCell else { return UICollectionViewCell() }
             
             
             let model = ProductItem(id: "6540f93a48e4bd7bf4940ffd",
@@ -178,10 +178,11 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
                                     price: 65.3,
                                     priceText: "₺65,30",
                                     shortDescription: "")
-//            cell.productModel = model
+            cell.productModel = model
             
-            guard let test = presenter.getProductsFirebase(index: indexPath.row) else { return UICollectionViewCell() }
-            cell.productModel = test
+            
+//            guard let model = presenter.getProductsFirebase(index: indexPath.row) else { return UICollectionViewCell() }
+//            cell.productModel = model
             
             return cell
         }
@@ -192,7 +193,7 @@ extension ShoppingCardViewController: UICollectionViewDataSource {
 extension ShoppingCardViewController: ComplateOrderButtonViewDelegate {
     func tappedComplateOrderButton() {
         collectionView.isHidden = true
-        complateOrderButton.isHidden = true
         complateOrderMessage.isHidden = false
+        complateOrderButton.amount = Int(presenter.getAmount() ?? 0)
     }
 }
