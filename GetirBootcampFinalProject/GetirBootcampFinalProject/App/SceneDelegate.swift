@@ -16,9 +16,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ProductListingViewController()
+        let productsListRouter = ProductsListingRouter.createModule()
+        let navigationController = UINavigationController(rootViewController: productsListRouter)
+        
+        
+        let standartAppearanca = UINavigationBarAppearance()
+        standartAppearanca.titleTextAttributes = [.foregroundColor: AppColor.getColor(.white) ?? UIColor()]
+        standartAppearanca.configureWithOpaqueBackground()
+        standartAppearanca.backgroundColor = AppColor.getColor(.primary)
+        navigationController.navigationBar.scrollEdgeAppearance = standartAppearanca
+        UINavigationBar.appearance().standardAppearance = standartAppearanca
+        UINavigationBar.appearance().compactAppearance = standartAppearanca
+        UINavigationBar.appearance().scrollEdgeAppearance = standartAppearanca
+        
+        window.makeKeyAndVisible()
+        window.rootViewController = navigationController
         self.window = window
-        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

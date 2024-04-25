@@ -21,7 +21,9 @@ enum ErrorTypes: String, Error {
 }
 
 struct NetworkHelper {
+    
     static let shared = NetworkHelper()
+
     private let BASE_URL = "https://65c38b5339055e7482c12050.mockapi.io/api/"
     
     enum Api {

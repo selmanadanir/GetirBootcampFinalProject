@@ -17,4 +17,8 @@ struct AppSize {
     static func getSize(_ size: Size) -> Int {
         return size.rawValue
     }
+    
+    static func getSize(_ size: Size) -> CGFloat {
+        return CGFloat(size.rawValue)
+    }
 }
